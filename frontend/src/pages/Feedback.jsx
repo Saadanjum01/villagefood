@@ -13,9 +13,12 @@ const Feedback = () => {
   });
   const [hoverRating, setHoverRating] = useState(0);
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
+    if (submitted) setSubmitted(false);
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,8 +29,10 @@ const Feedback = () => {
     setSubmitting(true);
     setTimeout(() => {
       setSubmitting(false);
+      setSubmitted(true);
+      setHoverRating(0);
       setForm({ name: "", location: "", rating: 0, message: "" });
-      toast.success("Thanks for the feedback — we read every word!");
+      toast.success("Feedback received! Thank you.");
     }, 600);
   };
 
@@ -152,6 +157,20 @@ const Feedback = () => {
           >
             {submitting ? "Submitting..." : "Submit Feedback"} <Send size={16} />
           </button>
+
+          {submitted ? (
+            <div
+              className="font-ui mt-4 rounded-sm px-4 py-3 text-sm"
+              style={{
+                background: "rgba(245,197,24,0.16)",
+                border: "1px solid rgba(27,43,107,0.2)",
+                color: "var(--navy)",
+              }}
+              data-testid="feedback-success-message"
+            >
+              Message received. Our team will review your feedback shortly.
+            </div>
+          ) : null}
         </motion.form>
       </section>
     </div>
