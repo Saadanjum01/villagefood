@@ -30,6 +30,9 @@ const Home = () => {
           <motion.img
             src={HERO_BG}
             alt=""
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.6, ease: "easeOut" }}
@@ -191,6 +194,8 @@ const Home = () => {
             <img
               src={STORY_IMG}
               alt="Wood-fired kitchen"
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
             <div
@@ -266,6 +271,8 @@ const Home = () => {
           <img
             src={PIZZA_IMG}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div
@@ -304,6 +311,8 @@ const Home = () => {
           <img
             src={SEAFOOD_IMG}
             alt=""
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div

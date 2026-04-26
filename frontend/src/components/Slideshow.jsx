@@ -30,6 +30,14 @@ const Slideshow = () => {
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    // Preload slideshow images to avoid blank/slow transitions.
+    slides.forEach((s) => {
+      const img = new Image();
+      img.src = s.src;
+    });
+  }, []);
+
+  useEffect(() => {
     if (paused) return;
     const t = setTimeout(() => setIndex((i) => (i + 1) % slides.length), AUTO_MS);
     return () => clearTimeout(t);
@@ -91,6 +99,9 @@ const Slideshow = () => {
               <img
                 src={slide.src}
                 alt={slide.title}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
                 className="h-full w-full object-cover"
                 draggable={false}
               />

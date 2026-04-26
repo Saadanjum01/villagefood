@@ -118,10 +118,10 @@ const Menu = () => {
                 {menu.pizza.map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.35, delay: i * 0.04 }}
+                    viewport={{ once: true, amount: 0.01 }}
+                    transition={{ duration: 0.2 }}
                     className="flex items-start justify-between gap-4 border-b border-dark/10 py-4"
                     data-testid={`menu-pizza-${i}`}
                   >
@@ -141,10 +141,10 @@ const Menu = () => {
                 {menu[cat.id].map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 12 }}
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.35, delay: i * 0.04 }}
+                    viewport={{ once: true, amount: 0.01 }}
+                    transition={{ duration: 0.2 }}
                     className="flex flex-col rounded-md bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
                     style={{ borderTop: "3px solid var(--gold)" }}
                     data-testid={`menu-item-${cat.id}-${i}`}
