@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.30-PM.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.32-PM-1.jpeg",
     eyebrow: "Hand-tossed",
     title: "Pepperoni Classic",
     body: "Vine-ripe sauce, mountains of mozzarella, and crisped-edge pepperoni — the way a pizza ought to be.",
@@ -16,16 +16,10 @@ const slides = [
     body: "Slow-simmered sauce, melted mozzarella, and a basket of warm garlic bread alongside.",
   },
   {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.32-PM-1.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.30-PM.jpeg",
     eyebrow: "Catering Ready",
     title: "Lasagna & Garlic Bread",
     body: "Layered, baked, and bubbling — feed the table with a Village classic.",
-  },
-  {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.33-PM.jpeg",
-    eyebrow: "Slice of Texas",
-    title: "Stretched & Stringy",
-    body: "Every pie is hand-tossed, hand-topped, and pulled straight from the oven for you.",
   },
   {
     src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.34-PM.jpeg",
