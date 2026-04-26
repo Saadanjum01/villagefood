@@ -1,0 +1,5 @@
+/* Page-level container resets */
+.App {
+  min-height: 100vh;
+  background: var(--cream);
+}
