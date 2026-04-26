@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, Phone, ArrowRight, ChevronRight } from "lucide-react";
 import Logo from "../components/Logo";
+import Slideshow from "../components/Slideshow";
 import { locations, mapsUrl } from "../data/locations";
 
 const Home = () => {
@@ -86,6 +87,9 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* PHOTO SLIDESHOW */}
+      <Slideshow />
 
       {/* SIDE-BY-SIDE FEATURE BLOCKS */}
       <section className="grid md:grid-cols-2" data-testid="home-feature-blocks">
