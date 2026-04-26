@@ -10,7 +10,7 @@ const slides = [
     body: "Vine-ripe sauce, mountains of mozzarella, and crisped-edge pepperoni — the way a pizza ought to be.",
   },
   {
-    src: "/images/slide-meatballs.jpeg",
+    src: "/images/slide-meatballs.png",
     eyebrow: "Family Style",
     title: "Meatballs & Marinara",
     body: "Slow-simmered sauce, melted mozzarella, and a basket of warm garlic bread alongside.",
