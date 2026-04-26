@@ -5,6 +5,7 @@ import { Menu as MenuIcon, X } from "lucide-react";
 import Logo from "./Logo";
 
 const links = [
+  { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
   { to: "/locations", label: "Locations" },
   { to: "/about", label: "About" },

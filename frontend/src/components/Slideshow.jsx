@@ -21,12 +21,6 @@ const slides = [
     title: "Lasagna & Garlic Bread",
     body: "Layered, baked, and bubbling — feed the table with a Village classic.",
   },
-  {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.34-PM.jpeg",
-    eyebrow: "Signature",
-    title: "The Village Supreme",
-    body: "Pepperoni, sausage, peppers, onions, olives — every topping that earned its spot.",
-  },
 ];
 
 const AUTO_MS = 4500;
