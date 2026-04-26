@@ -5,9 +5,8 @@ import { MapPin, Phone, ArrowRight, ChevronRight, Star, Award, Utensils } from "
 import Slideshow from "../components/Slideshow";
 import { locations, mapsUrl } from "../data/locations";
 
-// Hero background uses one of the user's own food shots.
 const HERO_BG =
-  "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/dnp52cey_WhatsApp%20Image%202026-04-21%20at%209.18.29%20PM.jpeg";
+  "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.30-PM.jpeg";
 
 // Stock images for feature blocks (Unsplash, free-to-use)
 const PIZZA_IMG =

@@ -4,31 +4,31 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    src: "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/dnp52cey_WhatsApp%20Image%202026-04-21%20at%209.18.29%20PM.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.30-PM.jpeg",
     eyebrow: "Hand-tossed",
     title: "Pepperoni Classic",
     body: "Vine-ripe sauce, mountains of mozzarella, and crisped-edge pepperoni — the way a pizza ought to be.",
   },
   {
-    src: "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/knj0zn4t_WhatsApp%20Image%202026-04-21%20at%2010.06.30%20PM.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.31-PM.jpeg",
     eyebrow: "Family Style",
     title: "Meatballs & Marinara",
     body: "Slow-simmered sauce, melted mozzarella, and a basket of warm garlic bread alongside.",
   },
   {
-    src: "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/m8n1ftxf_WhatsApp%20Image%202026-04-21%20at%2010.06.31%20PM.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.32-PM-1.jpeg",
     eyebrow: "Catering Ready",
     title: "Lasagna & Garlic Bread",
     body: "Layered, baked, and bubbling — feed the table with a Village classic.",
   },
   {
-    src: "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/j7y1hu23_WhatsApp%20Image%202026-04-21%20at%2010.06.32%20PM%20%281%29.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.33-PM.jpeg",
     eyebrow: "Slice of Texas",
     title: "Stretched & Stringy",
     body: "Every pie is hand-tossed, hand-topped, and pulled straight from the oven for you.",
   },
   {
-    src: "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/mfe513ko_WhatsApp%20Image%202026-04-21%20at%2010.06.32%20PM.jpeg",
+    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.34-PM.jpeg",
     eyebrow: "Signature",
     title: "The Village Supreme",
     body: "Pepperoni, sausage, peppers, onions, olives — every topping that earned its spot.",

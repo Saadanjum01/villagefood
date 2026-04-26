@@ -1,7 +1,7 @@
 import React from "react";
 
 const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_pizzavillage-deploy/artifacts/jehugfca_admin-ajax.webp";
+  "https://villagepizzaseafood.com/wp-content/uploads/2026/01/qtq_95.webp";
 
 /**
  * The actual brand logo already contains the words "Village Pizza & Seafood".
