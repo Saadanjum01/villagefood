@@ -6,15 +6,15 @@ import Slideshow from "../components/Slideshow";
 import { locations, mapsUrl } from "../data/locations";
 
 const HERO_BG =
-  "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.30-PM.jpeg";
+  "/images/home-hero.jpeg";
 
 // Stock images for feature blocks (Unsplash, free-to-use)
 const PIZZA_IMG =
-  "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80&auto=format&fit=crop";
+  "/images/home-pizza.jpg";
 const SEAFOOD_IMG =
-  "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=1200&q=80&auto=format&fit=crop";
+  "/images/home-seafood.jpg";
 const STORY_IMG =
-  "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=1200&q=80&auto=format&fit=crop";
+  "/images/home-story.jpg";
 
 const Home = () => {
   return (

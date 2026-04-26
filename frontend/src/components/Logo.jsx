@@ -1,8 +1,6 @@
 import React from "react";
 
 const LOGO_PATH = "/logo.webp";
-const FALLBACK_LOGO_URL =
-  "https://villagepizzaseafood.com/wp-content/uploads/2026/01/qtq_95.webp";
 
 /**
  * The actual brand logo already contains the words "Village Pizza & Seafood".
@@ -15,12 +13,6 @@ export const Logo = ({ size = 56, className = "" }) => (
     loading="eager"
     fetchPriority="high"
     decoding="async"
-    onError={(e) => {
-      // Keep a remote fallback so logo still appears even if local asset is missing.
-      if (e.currentTarget.src !== FALLBACK_LOGO_URL) {
-        e.currentTarget.src = FALLBACK_LOGO_URL;
-      }
-    }}
     style={{
       height: size,
       width: "auto",

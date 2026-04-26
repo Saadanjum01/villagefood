@@ -4,19 +4,19 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.32-PM-1.jpeg",
+    src: "/images/slide-pepperoni.jpeg",
     eyebrow: "Hand-tossed",
     title: "Pepperoni Classic",
     body: "Vine-ripe sauce, mountains of mozzarella, and crisped-edge pepperoni — the way a pizza ought to be.",
   },
   {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.31-PM.jpeg",
+    src: "/images/slide-meatballs.jpeg",
     eyebrow: "Family Style",
     title: "Meatballs & Marinara",
     body: "Slow-simmered sauce, melted mozzarella, and a basket of warm garlic bread alongside.",
   },
   {
-    src: "https://villagepizzaseafood.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-21-at-10.06.30-PM.jpeg",
+    src: "/images/home-hero.jpeg",
     eyebrow: "Catering Ready",
     title: "Lasagna & Garlic Bread",
     body: "Layered, baked, and bubbling — feed the table with a Village classic.",

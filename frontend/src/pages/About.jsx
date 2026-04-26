@@ -3,22 +3,19 @@ import { motion } from "framer-motion";
 
 const values = [
   {
-    image:
-      "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=900&q=80&auto=format&fit=crop",
+    image: "/images/home-story.jpg",
     eyebrow: "What Drives Us",
     title: "Mission",
     body: "Serve every neighbor a plate worth coming back for — made fresh, served fast, and rooted in Texas hospitality.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&auto=format&fit=crop",
+    image: "/images/about-vision.jpg",
     eyebrow: "Where We're Headed",
     title: "Vision",
     body: "Be the favorite hometown table from the Bay to the Bayou, where pizza night and seafood Friday belong to one name: Village.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1542528180-a1208c5169a5?w=900&q=80&auto=format&fit=crop",
+    image: "/images/about-values.jpg",
     eyebrow: "How We Show Up",
     title: "Values",
     body: "Family first. Quality always. Community above all. We hire local, source local, and serve the people who built us.",
