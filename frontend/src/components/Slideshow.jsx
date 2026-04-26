@@ -16,7 +16,7 @@ const slides = [
     body: "Slow-simmered sauce, melted mozzarella, and a basket of warm garlic bread alongside.",
   },
   {
-    src: "/images/home-hero.jpeg",
+    src: "/images/slide-lasagna.png",
     eyebrow: "Catering Ready",
     title: "Lasagna & Garlic Bread",
     body: "Layered, baked, and bubbling — feed the table with a Village classic.",
