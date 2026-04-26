@@ -13,7 +13,7 @@ const Footer = () => {
     >
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3 lg:px-8">
         <div>
-          <Logo size={56} withText />
+          <Logo size={84} />
           <p className="mt-5 max-w-sm font-body text-cream/80">
             Family-owned Texas pizza and seafood since 1995. Serving the
             communities we love, one slice at a time.

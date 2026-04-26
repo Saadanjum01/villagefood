@@ -38,10 +38,10 @@ const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link to="/" data-testid="navbar-home-link" className="flex items-center">
           <motion.div
-            animate={{ scale: scrolled ? 0.9 : 1 }}
+            animate={{ scale: scrolled ? 0.85 : 1 }}
             transition={{ duration: 0.25 }}
           >
-            <Logo size={scrolled ? 40 : 52} withText />
+            <Logo size={scrolled ? 48 : 64} />
           </motion.div>
         </Link>
 

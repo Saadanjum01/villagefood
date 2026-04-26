@@ -246,6 +246,12 @@ h4,
   scrollbar-width: none;
 }
 
+/* Marquee animation (used in hero strip) */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Sonner toast tweaks */
 [data-sonner-toaster] {
   --normal-bg: var(--navy);
