@@ -88,15 +88,17 @@ const LocationDetail = () => {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={loc.orderUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary"
-              data-testid="location-detail-order"
-            >
-              Order Online Now <ExternalLink size={16} />
-            </a>
+            {loc.orderUrl ? (
+              <a
+                href={loc.orderUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+                data-testid="location-detail-order"
+              >
+                Order Online Now <ExternalLink size={16} />
+              </a>
+            ) : null}
             <a
               href={mapsUrl(loc.address)}
               target="_blank"

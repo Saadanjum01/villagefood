@@ -381,16 +381,18 @@ const Home = () => {
                   <Phone size={14} /> {l.phone}
                 </a>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <a
-                    href={l.orderUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-primary"
-                    style={{ padding: "0.55rem 1rem", fontSize: "0.78rem" }}
-                    data-testid={`home-order-${l.id}`}
-                  >
-                    Order
-                  </a>
+                  {l.orderUrl ? (
+                    <a
+                      href={l.orderUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-primary"
+                      style={{ padding: "0.55rem 1rem", fontSize: "0.78rem" }}
+                      data-testid={`home-order-${l.id}`}
+                    >
+                      Order
+                    </a>
+                  ) : null}
                   <a
                     href={mapsUrl(l.address)}
                     target="_blank"
