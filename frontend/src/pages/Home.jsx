@@ -22,7 +22,7 @@ const Home = () => {
     <div data-testid="home-page">
       {/* HERO — full-bleed food photo, editorial asymmetric layout */}
       <section
-        className="relative overflow-hidden clip-diagonal-tr"
+        className="relative overflow-hidden"
         style={{ minHeight: "92vh" }}
         data-testid="home-hero"
       >

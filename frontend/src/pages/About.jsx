@@ -1,20 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, Star, Users } from "lucide-react";
 
 const values = [
   {
-    icon: Heart,
+    image:
+      "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=900&q=80&auto=format&fit=crop",
+    eyebrow: "What Drives Us",
     title: "Mission",
     body: "Serve every neighbor a plate worth coming back for — made fresh, served fast, and rooted in Texas hospitality.",
   },
   {
-    icon: Star,
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&auto=format&fit=crop",
+    eyebrow: "Where We're Headed",
     title: "Vision",
     body: "Be the favorite hometown table from the Bay to the Bayou, where pizza night and seafood Friday belong to one name: Village.",
   },
   {
-    icon: Users,
+    image:
+      "https://images.unsplash.com/photo-1542528180-a1208c5169a5?w=900&q=80&auto=format&fit=crop",
+    eyebrow: "How We Show Up",
     title: "Values",
     body: "Family first. Quality always. Community above all. We hire local, source local, and serve the people who built us.",
   },
@@ -88,41 +93,65 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="bg-navy py-20 clip-diagonal-tr" data-testid="about-values">
+      <section className="bg-navy py-20" data-testid="about-values">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-display text-center text-gold"
-            style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)", lineHeight: 1 }}
+            className="text-center"
           >
-            WHAT WE STAND FOR
-          </motion.h2>
+            <div className="font-ui text-sm text-gold">The Village Way</div>
+            <h2
+              className="font-display mt-2 text-gold"
+              style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)", lineHeight: 1 }}
+            >
+              WHAT WE STAND FOR
+            </h2>
+          </motion.div>
+
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {values.map((v, i) => {
-              const Icon = v.icon;
-              return (
-                <motion.div
-                  key={v.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  whileHover={{ y: -6 }}
-                  className="rounded-md bg-cream p-7"
-                  style={{ borderTop: "4px solid var(--red)" }}
-                  data-testid={`about-value-${v.title.toLowerCase()}`}
-                >
-                  <div className="brand-gradient-warm flex h-12 w-12 items-center justify-center rounded-full">
-                    <Icon size={22} color="#fff" />
+            {values.map((v, i) => (
+              <motion.div
+                key={v.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                whileHover={{ y: -8 }}
+                className="group flex flex-col overflow-hidden rounded-md bg-cream shadow-lg"
+                style={{ borderTop: "4px solid var(--red)" }}
+                data-testid={`about-value-${v.title.toLowerCase()}`}
+              >
+                {/* Image header */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={v.image}
+                    alt={v.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(27,43,107,0.1) 0%, rgba(27,43,107,0.55) 100%)",
+                    }}
+                  />
+                  <div className="absolute bottom-3 left-5">
+                    <div className="font-ui text-xs text-gold">{v.eyebrow}</div>
                   </div>
-                  <h3 className="font-display mt-5 text-3xl text-navy">{v.title.toUpperCase()}</h3>
+                </div>
+
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-7">
+                  <h3 className="font-display text-3xl text-navy">
+                    {v.title.toUpperCase()}
+                  </h3>
                   <p className="font-body mt-3 text-dark/80">{v.body}</p>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
