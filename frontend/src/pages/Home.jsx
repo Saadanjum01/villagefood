@@ -6,7 +6,7 @@ import Slideshow from "../components/Slideshow";
 import { locations, mapsUrl } from "../data/locations";
 
 const HERO_BG =
-  "/images/home-hero.jpeg";
+  "/images/home-hero-optimized.jpg";
 
 // Stock images for feature blocks (Unsplash, free-to-use)
 const PIZZA_IMG =
