@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "cd frontend && yarn install --frozen-lockfile && yarn build",
-  "outputDirectory": "frontend/build",
-  "installCommand": "npm install",
-  "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
-}
