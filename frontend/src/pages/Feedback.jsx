@@ -20,20 +20,29 @@ const Feedback = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.location || form.rating === 0 || !form.message) {
       toast.error("Please complete all fields, including a star rating.");
       return;
     }
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const res = await fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Server error");
       setSubmitted(true);
       setHoverRating(0);
       setForm({ name: "", location: "", rating: 0, message: "" });
       toast.success("Feedback received! Thank you.");
-    }, 600);
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (

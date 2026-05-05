@@ -1,13 +1,14 @@
 {
-  "experimentalServices": {
-    "frontend": {
-      "entrypoint": "frontend",
-      "routePrefix": "/",
-      "framework": "create-react-app"
-    },
-    "backend": {
-      "entrypoint": "backend",
-      "routePrefix": "/_/backend"
+  "version": 2,
+  "buildCommand": "cd frontend && yarn build",
+  "outputDirectory": "frontend/build",
+  "functions": {
+    "frontend/api/*.js": {
+      "runtime": "vercel-node@latest"
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/frontend/api/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

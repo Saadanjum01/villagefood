@@ -1,18 +1,21 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
+import resend
 
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
+
+resend.api_key = os.environ.get('RESEND_API_KEY', '')
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
@@ -36,6 +39,18 @@ class StatusCheck(BaseModel):
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+class ContactForm(BaseModel):
+    name: str
+    email: EmailStr
+    location: Optional[str] = None
+    message: str
+
+class FeedbackForm(BaseModel):
+    name: str
+    location: str
+    rating: int = Field(ge=1, le=5)
+    message: str
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
@@ -65,6 +80,67 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+@api_router.post("/contact")
+async def send_contact_email(form: ContactForm):
+    if not resend.api_key:
+        raise HTTPException(status_code=500, detail="Email service not configured.")
+
+    from_address = os.environ.get('RESEND_FROM', 'onboarding@resend.dev')
+    notify_to = os.environ.get('CONTACT_NOTIFY_TO', 'hello@villagepizzaseafood.com')
+    location_line = f"<p><strong>Location:</strong> {form.location}</p>" if form.location else ""
+
+    try:
+        resend.Emails.send({
+            "from": from_address,
+            "to": [notify_to],
+            "reply_to": form.email,
+            "subject": f"New Contact Message from {form.name}",
+            "html": f"""
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> {form.name}</p>
+                <p><strong>Email:</strong> {form.email}</p>
+                {location_line}
+                <p><strong>Message:</strong></p>
+                <p>{form.message}</p>
+            """,
+        })
+    except Exception as e:
+        logger.error("Resend contact email failed: %s", e)
+        raise HTTPException(status_code=502, detail="Failed to send email.")
+
+    return {"success": True}
+
+
+@api_router.post("/feedback")
+async def send_feedback_email(form: FeedbackForm):
+    if not resend.api_key:
+        raise HTTPException(status_code=500, detail="Email service not configured.")
+
+    from_address = os.environ.get('RESEND_FROM', 'onboarding@resend.dev')
+    notify_to = os.environ.get('CONTACT_NOTIFY_TO', 'hello@villagepizzaseafood.com')
+    stars = "⭐" * form.rating
+
+    try:
+        resend.Emails.send({
+            "from": from_address,
+            "to": [notify_to],
+            "subject": f"New Feedback ({form.rating}/5) — {form.location}",
+            "html": f"""
+                <h2>New Feedback Submission</h2>
+                <p><strong>Name:</strong> {form.name}</p>
+                <p><strong>Location:</strong> {form.location}</p>
+                <p><strong>Rating:</strong> {stars} ({form.rating}/5)</p>
+                <p><strong>Feedback:</strong></p>
+                <p>{form.message}</p>
+            """,
+        })
+    except Exception as e:
+        logger.error("Resend feedback email failed: %s", e)
+        raise HTTPException(status_code=502, detail="Failed to send email.")
+
+    return {"success": True}
+
 
 # Include the router in the main app
 app.include_router(api_router)
