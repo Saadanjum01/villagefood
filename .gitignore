@@ -62,7 +62,6 @@ chainlit.md
 .vercel
 
 # Not needed on GitHub
-backend/
 tests/
 test_reports/
 memory/
