@@ -28,7 +28,7 @@ const Feedback = () => {
     }
     setSubmitting(true);
     try {
-      const res = await fetch("/api/feedback", {
+      const res = await fetch("/_/backend/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
