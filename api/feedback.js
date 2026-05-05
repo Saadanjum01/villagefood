@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -25,7 +25,7 @@ const escape = (s = "") =>
 
 const STARS = (n) => "★".repeat(n) + "☆".repeat(5 - n);
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   const { name, location, rating, message } = req.body || {};
@@ -71,4 +71,4 @@ export default async function handler(req, res) {
     console.error("Feedback email error:", err);
     res.status(500).json({ error: err.message || "Failed to send email" });
   }
-}
+};

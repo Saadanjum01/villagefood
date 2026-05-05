@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+const { Resend } = require("resend");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -23,7 +23,7 @@ const escape = (s = "") =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   const { name, email, location, message } = req.body || {};
@@ -106,4 +106,4 @@ export default async function handler(req, res) {
     console.error("Contact email error:", err);
     res.status(500).json({ error: err.message || "Failed to send email" });
   }
-}
+};
