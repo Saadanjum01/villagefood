@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && yarn build",
+  "buildCommand": "cd frontend && yarn install --frozen-lockfile && yarn build",
   "outputDirectory": "frontend/build",
-  "functions": {
-    "frontend/api/*.js": {
-      "runtime": "vercel-node@latest"
-    }
-  },
+  "installCommand": "npm install",
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/frontend/api/:path*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
