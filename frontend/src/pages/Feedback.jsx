@@ -7,6 +7,7 @@ import { locations } from "../data/locations";
 const Feedback = () => {
   const [form, setForm] = useState({
     name: "",
+    email: "",
     location: "",
     rating: 0,
     message: "",
@@ -22,7 +23,7 @@ const Feedback = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.location || form.rating === 0 || !form.message) {
+    if (!form.name || !form.email || !form.location || form.rating === 0 || !form.message) {
       toast.error("Please complete all fields, including a star rating.");
       return;
     }
@@ -36,7 +37,7 @@ const Feedback = () => {
       if (!res.ok) throw new Error("Server error");
       setSubmitted(true);
       setHoverRating(0);
-      setForm({ name: "", location: "", rating: 0, message: "" });
+      setForm({ name: "", email: "", location: "", rating: 0, message: "" });
       toast.success("Feedback received! Thank you.");
     } catch {
       toast.error("Something went wrong. Please try again.");
@@ -98,6 +99,22 @@ const Feedback = () => {
                 data-testid="feedback-input-name"
               />
             </div>
+            <div>
+              <label className="label" htmlFor="femail">Email</label>
+              <input
+                id="femail"
+                name="email"
+                type="email"
+                className="field"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
+                data-testid="feedback-input-email"
+              />
+            </div>
+          </div>
+
+          <div className="mt-4">
             <div>
               <label className="label" htmlFor="floc">Location Visited</label>
               <select
