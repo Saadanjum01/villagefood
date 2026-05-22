@@ -8,7 +8,6 @@ const FROM_ADDRESS = process.env.RESEND_FROM || "Village Pizza & Seafood <john@v
 const LOCATION_NAMES = {
   "dickinson": "Dickinson",
   "la-porte": "La Porte",
-  "league-city": "League City",
   "pasadena": "Pasadena",
   "santa-fe": "Santa Fe",
   "seabrook": "Seabrook",
@@ -36,7 +35,6 @@ module.exports = async function handler(req, res) {
   const safeEmail = escape(email);
   const safeMessage = escape(message).replace(/\n/g, "<br/>");
   const locationLabel = location ? (LOCATION_NAMES[location] || location) : null;
-  const firstName = safeName.split(" ")[0];
 
   try {
     await resend.emails.send({
@@ -63,39 +61,6 @@ module.exports = async function handler(req, res) {
           </div>
           <div style="background:#1b2b6b;color:#fbf6ec;text-align:center;padding:14px;font-size:12px;opacity:0.85;">
             Reply directly to this email to respond to ${safeName}.
-          </div>
-        </div>
-      `,
-    });
-
-    await resend.emails.send({
-      from: FROM_ADDRESS,
-      to: email,
-      reply_to: NOTIFY_TO,
-      subject: "We received your message — Village Pizza & Seafood",
-      html: `
-        <div style="font-family:Helvetica,Arial,sans-serif;max-width:600px;margin:0 auto;background:#fbf6ec;border:1px solid #e8e1d2;border-radius:8px;overflow:hidden;">
-          <div style="background:#1b2b6b;padding:28px;text-align:center;">
-            <h1 style="color:#f5c518;margin:0;font-size:26px;letter-spacing:1px;">VILLAGE PIZZA &amp; SEAFOOD</h1>
-            <p style="color:#fbf6ec;margin:8px 0 0;font-size:13px;opacity:0.85;">Family-Owned. Texas-Raised. Since 1995.</p>
-          </div>
-          <div style="padding:32px 28px;color:#1b2b6b;line-height:1.6;font-size:15px;">
-            <p style="margin:0 0 14px;font-size:18px;">Hi ${firstName},</p>
-            <p style="margin:0 0 14px;">
-              Thanks for reaching out to <strong>Village Pizza &amp; Seafood</strong>. We've received your message and one of our team will get back to you as soon as possible — usually within one business day.
-            </p>
-            <div style="background:#fff;padding:14px 16px;border-left:4px solid #f5c518;border-radius:4px;margin:18px 0;">
-              <div style="font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Your message</div>
-              <div style="color:#1b2b6b;">${safeMessage}</div>
-            </div>
-            <p style="margin:0 0 14px;">
-              In the meantime, feel free to give us a call at <strong><a href="tel:2813323606" style="color:#d62b2b;text-decoration:none;">281-332-3606</a></strong> or stop by one of our seven Texas locations.
-            </p>
-            <p style="margin:24px 0 0;">— The Village Pizza &amp; Seafood Team</p>
-          </div>
-          <div style="background:#1b2b6b;color:#fbf6ec;text-align:center;padding:16px;font-size:12px;">
-            <div style="opacity:0.85;">Dickinson · La Porte · League City · Pasadena · Santa Fe · Seabrook · CE King</div>
-            <div style="margin-top:6px;opacity:0.7;">villagepizzaseafood.com</div>
           </div>
         </div>
       `,

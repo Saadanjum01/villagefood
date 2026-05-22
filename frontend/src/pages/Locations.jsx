@@ -15,7 +15,7 @@ const Locations = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="font-ui text-sm text-cream/80">7 Texas Communities</div>
+            <div className="font-ui text-sm text-cream/80">6 Texas Communities</div>
             <h1
               className="font-display mt-2 text-gold"
               style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", lineHeight: 0.95 }}

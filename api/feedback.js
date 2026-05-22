@@ -8,7 +8,6 @@ const FROM_ADDRESS = process.env.RESEND_FROM || "Village Pizza & Seafood <john@v
 const LOCATION_NAMES = {
   "dickinson": "Dickinson",
   "la-porte": "La Porte",
-  "league-city": "League City",
   "pasadena": "Pasadena",
   "santa-fe": "Santa Fe",
   "seabrook": "Seabrook",
@@ -99,7 +98,7 @@ module.exports = async function handler(req, res) {
             <p style="margin:24px 0 0;">— The Village Pizza &amp; Seafood Team</p>
           </div>
           <div style="background:#1b2b6b;color:#fbf6ec;text-align:center;padding:16px;font-size:12px;">
-            <div style="opacity:0.85;">Dickinson · La Porte · League City · Pasadena · Santa Fe · Seabrook · CE King</div>
+            <div style="opacity:0.85;">Dickinson · La Porte · Pasadena · Santa Fe · Seabrook · CE King</div>
             <div style="margin-top:6px;opacity:0.7;">villagepizzaseafood.com</div>
           </div>
         </div>

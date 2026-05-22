@@ -39,7 +39,7 @@ const About = () => {
               style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", lineHeight: 0.95 }}
               data-testid="about-title"
             >
-              FAMILY-OWNED.<br />TEXAS-RAISED.
+              FAMILY-OWNED.
             </h1>
             <p className="font-body mx-auto mt-6 max-w-2xl text-lg text-cream/90">
               For more than three decades, the same family has been turning out
@@ -81,7 +81,7 @@ const About = () => {
               we toss and every basket of shrimp we lift from the fryer.
             </p>
             <p className="mt-4">
-              Today, seven Village kitchens serve communities across the Texas
+              Today, six Village kitchens serve communities across the Texas
               Gulf Coast — from Dickinson to Houston, La Porte to Santa Fe.
               Different towns, same recipes, same family.
             </p>

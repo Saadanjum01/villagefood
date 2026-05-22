@@ -17,14 +17,6 @@ export const locations = [
     hours: "Call for hours",
   },
   {
-    id: "league-city",
-    name: "League City",
-    address: "2314 west main st. league city, tx 77573",
-    phone: "281-332-3606",
-    orderUrl: "https://villagepizzaseafood.ordering.ordercounter.com/Menu",
-    hours: "mon 10:30 am – 10:00 pm | tue 10:30 am – 10:00 pm | wed 10:30 am – 10:00 pm | thu 10:30 am – 10:00 pm | fri 10:30 am – 10:00 pm | sat 10:30 am – 10:00 pm | sun 10:30 am – 10:00 pm",
-  },
-  {
     id: "pasadena",
     name: "Pasadena",
     address: "3910 fairmont parkway, pasadena, texas 77504",

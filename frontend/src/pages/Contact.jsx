@@ -89,15 +89,15 @@ const Contact = () => {
                 <MapPin className="mt-1 flex-none text-red" size={20} />
                 <div>
                   <div className="label">Headquarters</div>
-                  <div className="font-body">2314 West Main St, League City, TX 77573</div>
+                  <div className="font-body">4335 FM 517 Rd. East, Dickinson, TX</div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="mt-1 flex-none text-red" size={20} />
                 <div>
                   <div className="label">Main Line</div>
-                  <a className="font-body text-red hover:underline" href="tel:2813323606">
-                    281-332-3606
+                  <a className="font-body text-red hover:underline" href="tel:2815344222">
+                    281-534-4222
                   </a>
                 </div>
               </li>

@@ -69,7 +69,7 @@ const Home = () => {
             </span>
             <span className="opacity-50">/</span>
             <span className="inline-flex items-center gap-1.5">
-              <MapPin size={14} /> 7 Texas Locations
+              <MapPin size={14} /> 6 Texas Locations
             </span>
             <span className="opacity-50">/</span>
             <span className="inline-flex items-center gap-1.5">
@@ -90,8 +90,8 @@ const Home = () => {
                 style={{ fontSize: "clamp(3rem, 9vw, 7.5rem)", lineHeight: 0.9 }}
                 data-testid="home-hero-title"
               >
-                <span className="block text-gold">HAND-TOSSED.</span>
-                <span className="block">GULF-FRESH.</span>
+                <span className="block text-gold">HOMEMADE PIZZA.</span>
+                <span className="block">GULF-FRESH SEAFOOD.</span>
                 <span
                   className="block"
                   style={{ color: "var(--orange)" }}
@@ -113,7 +113,7 @@ const Home = () => {
                 data-testid="home-hero-tagline"
               >
                 Three decades of pies, platters, and packed dining rooms.
-                One family. One recipe book. Seven hometowns.
+                One family. One recipe book. Six hometowns.
               </p>
             </motion.div>
           </div>
@@ -152,7 +152,7 @@ const Home = () => {
               style={{ border: "1px solid rgba(245,197,24,0.35)" }}
             >
               <div className="font-ui text-xs text-gold">Order Online</div>
-              <div className="font-display text-2xl text-cream">7 Branches</div>
+              <div className="font-display text-2xl text-cream">6 Branches</div>
             </div>
           </motion.div>
         </div>
@@ -168,10 +168,10 @@ const Home = () => {
           <div className="font-ui flex animate-[marquee_28s_linear_infinite] whitespace-nowrap py-3 text-cream">
             {[...Array(2)].map((_, k) => (
               <div key={k} className="flex shrink-0 items-center gap-10 pr-10">
-                <span>● HAND-STRETCHED DOUGH</span>
+                <span>● HOMEMADE PIZZA</span>
                 <span>● GULF-FRESH SEAFOOD</span>
                 <span>● FAMILY-OWNED SINCE 1995</span>
-                <span>● 7 TEXAS LOCATIONS</span>
+                <span>● 6 TEXAS LOCATIONS</span>
                 <span>● ORDER ONLINE</span>
                 <span>● CATERING AVAILABLE</span>
               </div>
@@ -225,7 +225,7 @@ const Home = () => {
               <span className="text-red">GOOD TIMES.</span>
             </h2>
             <p className="mt-6 font-body text-lg text-dark/80">
-              Seven neighborhood kitchens across the Texas Gulf Coast — one
+              Six neighborhood kitchens across the Texas Gulf Coast — one
               family recipe book. We slice the cheese, hand-stretch the dough,
               and source seafood from the coast we call home.
             </p>
@@ -237,7 +237,7 @@ const Home = () => {
             <div className="mt-8 grid grid-cols-3 gap-4">
               {[
                 { n: "30+", l: "Years" },
-                { n: "7", l: "Locations" },
+                { n: "6", l: "Locations" },
                 { n: "1", l: "Family" },
               ].map((s) => (
                 <div
@@ -286,7 +286,7 @@ const Home = () => {
             <Utensils className="text-gold" size={36} />
             <h3 className="font-display mt-4 text-6xl text-gold">PIZZA</h3>
             <p className="font-body mt-3 max-w-md text-cream/95 text-lg">
-              Hand-tossed dough, vine-ripe sauce, and mountains of mozzarella.
+              Homemade dough, vine-ripe sauce, and mountains of mozzarella.
               Classic, specialty, and build-your-own — small or large.
             </p>
             <Link
@@ -356,7 +356,7 @@ const Home = () => {
                 className="font-display text-navy"
                 style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)", lineHeight: 1 }}
               >
-                SEVEN TEXAS LOCATIONS
+                SIX TEXAS LOCATIONS
               </h2>
             </div>
             <Link to="/locations" className="btn-ghost-navy" data-testid="home-all-locations-link">

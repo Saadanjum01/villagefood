@@ -46,10 +46,10 @@ const Menu = () => {
               style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)", lineHeight: 0.95 }}
               data-testid="menu-title"
             >
-              EAT THE VILLAGE
+              EAT IT LOVE IT
             </h1>
             <p className="font-body mx-auto mt-5 max-w-xl text-cream/85">
-              From hand-tossed pizzas to gulf-fresh seafood — every bite, every day.
+              From homemade pizzas to gulf-fresh seafood — every bite, every day.
             </p>
           </motion.div>
         </div>

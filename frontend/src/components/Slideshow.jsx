@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     src: "/images/slide-pepperoni.jpeg",
-    eyebrow: "Hand-tossed",
+    eyebrow: "Homemade",
     title: "Pepperoni Classic",
     body: "Vine-ripe sauce, mountains of mozzarella, and crisped-edge pepperoni — the way a pizza ought to be.",
   },
