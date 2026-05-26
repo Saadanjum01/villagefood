@@ -11,7 +11,7 @@ const LOCATION_NAMES = {
   "pasadena": "Pasadena",
   "santa-fe": "Santa Fe",
   "seabrook": "Seabrook",
-  "ce-king": "CE King (Houston)",
+  "league-city": "League City",
 };
 
 const escape = (s = "") =>
@@ -98,7 +98,7 @@ module.exports = async function handler(req, res) {
             <p style="margin:24px 0 0;">— The Village Pizza &amp; Seafood Team</p>
           </div>
           <div style="background:#1b2b6b;color:#fbf6ec;text-align:center;padding:16px;font-size:12px;">
-            <div style="opacity:0.85;">Dickinson · La Porte · Pasadena · Santa Fe · Seabrook · CE King</div>
+            <div style="opacity:0.85;">Dickinson · La Porte · League City · Pasadena · Santa Fe · Seabrook</div>
             <div style="margin-top:6px;opacity:0.7;">villagepizzaseafood.com</div>
           </div>
         </div>

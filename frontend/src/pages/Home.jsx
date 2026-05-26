@@ -92,12 +92,6 @@ const Home = () => {
               >
                 <span className="block text-gold">HOMEMADE PIZZA.</span>
                 <span className="block">GULF-FRESH SEAFOOD.</span>
-                <span
-                  className="block"
-                  style={{ color: "var(--orange)" }}
-                >
-                  TEXAS-RAISED.
-                </span>
               </h1>
             </motion.div>
 

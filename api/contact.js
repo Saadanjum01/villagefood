@@ -11,7 +11,7 @@ const LOCATION_NAMES = {
   "pasadena": "Pasadena",
   "santa-fe": "Santa Fe",
   "seabrook": "Seabrook",
-  "ce-king": "CE King (Houston)",
+  "league-city": "League City",
 };
 
 const escape = (s = "") =>

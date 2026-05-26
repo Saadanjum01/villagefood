@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { Mail, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
 import { locations } from "../data/locations";
 
@@ -85,22 +85,6 @@ const Contact = () => {
             </h2>
 
             <ul className="space-y-5 pt-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-1 flex-none text-red" size={20} />
-                <div>
-                  <div className="label">Headquarters</div>
-                  <div className="font-body">4335 FM 517 Rd. East, Dickinson, TX</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="mt-1 flex-none text-red" size={20} />
-                <div>
-                  <div className="label">Main Line</div>
-                  <a className="font-body text-red hover:underline" href="tel:2815344222">
-                    281-534-4222
-                  </a>
-                </div>
-              </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-1 flex-none text-red" size={20} />
                 <div>
