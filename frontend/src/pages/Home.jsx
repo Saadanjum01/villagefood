@@ -10,7 +10,7 @@ const HERO_BG =
 
 // Stock images for feature blocks (Unsplash, free-to-use)
 const PIZZA_IMG =
-  "/images/home-pizza.jpg";
+  "/images/client-pepperoni-pizza.jpeg";
 const SEAFOOD_IMG =
   "/images/home-seafood.jpg";
 const STORY_IMG =
