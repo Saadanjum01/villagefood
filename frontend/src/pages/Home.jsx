@@ -17,6 +17,8 @@ const STORY_IMG =
   "/images/home-story.jpg";
 
 const Home = () => {
+  const locationCount = locations.length;
+
   return (
     <div data-testid="home-page">
       {/* HERO — full-bleed food photo, editorial asymmetric layout */}
@@ -69,7 +71,7 @@ const Home = () => {
             </span>
             <span className="opacity-50">/</span>
             <span className="inline-flex items-center gap-1.5">
-              <MapPin size={14} /> 6 Texas Locations
+              <MapPin size={14} /> {locationCount} Texas Locations
             </span>
             <span className="opacity-50">/</span>
             <span className="inline-flex items-center gap-1.5">
@@ -107,7 +109,7 @@ const Home = () => {
                 data-testid="home-hero-tagline"
               >
                 Three decades of pies, platters, and packed dining rooms.
-                One family. One recipe book. Six hometowns.
+                One family. One recipe book. {locationCount} hometowns.
               </p>
             </motion.div>
           </div>

@@ -1,4 +1,41 @@
 {
+  "redirects": [
+    {
+      "source": "/dickinson",
+      "destination": "/locations/dickinson",
+      "permanent": true
+    },
+    {
+      "source": "/la-porte",
+      "destination": "/locations/la-porte",
+      "permanent": true
+    },
+    {
+      "source": "/pasadena",
+      "destination": "/locations/pasadena",
+      "permanent": true
+    },
+    {
+      "source": "/santa-fe",
+      "destination": "/locations/santa-fe",
+      "permanent": true
+    },
+    {
+      "source": "/seabrook",
+      "destination": "/locations/seabrook",
+      "permanent": true
+    },
+    {
+      "source": "/league-city",
+      "destination": "/locations/league-city",
+      "permanent": true
+    },
+    {
+      "source": "/ce-king",
+      "destination": "/locations/ce-king",
+      "permanent": true
+    }
+  ],
   "experimentalServices": {
     "frontend": {
       "entrypoint": "frontend",

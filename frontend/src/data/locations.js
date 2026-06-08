@@ -48,6 +48,14 @@ export const locations = [
     orderUrl: "https://villagepizzaseafood.ordering.ordercounter.com/Menu",
     hours: "mon 10:30 am – 10:00 pm | tue 10:30 am – 10:00 pm | wed 10:30 am – 10:00 pm | thu 10:30 am – 10:00 pm | fri 10:30 am – 10:00 pm | sat 10:30 am – 10:00 pm | sun 10:30 am – 10:00 pm",
   },
+  {
+    id: "ce-king",
+    name: "CE King",
+    address: "9627 c e king parkway, houston, tx",
+    phone: "281-456-4111",
+    orderUrl: "https://mr-cs-houston.cloveronline.com/",
+    hours: "Call for hours",
+  },
 ];
 
 export const getLocationById = (id) =>

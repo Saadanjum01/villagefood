@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import "@/App.css";
 
@@ -22,9 +22,11 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/:id" element={<LocationDetail />} />
+            <Route path="/:id" element={<LocationDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </BrowserRouter>
