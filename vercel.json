@@ -29,11 +29,6 @@
       "source": "/locations/league-city",
       "destination": "/league-city",
       "permanent": true
-    },
-    {
-      "source": "/locations/ce-king",
-      "destination": "/ce-king",
-      "permanent": true
     }
   ],
   "experimentalServices": {

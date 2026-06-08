@@ -39,7 +39,6 @@ LOCATION_NAMES = {
     "santa-fe": "Santa Fe",
     "seabrook": "Seabrook",
     "league-city": "League City",
-    "ce-king": "CE King",
 }
 
 

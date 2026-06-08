@@ -36,7 +36,14 @@ const Footer = () => {
           <ul className="mt-4 space-y-2 font-body text-sm text-cream/85">
             {locations.map((l) => (
               <li key={l.id} className="flex items-center justify-between gap-3">
-                <span className="font-ui">{l.name}</span>
+                <Link
+                  to={`/${l.id}`}
+                  className="font-ui text-sky-300 underline-offset-4 hover:text-gold hover:underline"
+                  data-testid={`footer-location-${l.id}`}
+                  aria-label={`View ${l.name} location details`}
+                >
+                  {l.name}
+                </Link>
                 <a
                   href={`tel:${l.phone.replace(/\D/g, "")}`}
                   className="inline-flex items-center gap-1 text-gold hover:text-cream"
