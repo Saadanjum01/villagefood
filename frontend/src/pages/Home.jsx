@@ -408,7 +408,7 @@ const Home = () => {
                     Directions
                   </a>
                   <Link
-                    to={`/locations/${l.id}`}
+                    to={`/${l.id}`}
                     className="font-ui inline-flex items-center gap-1 self-center text-sm text-navy hover:text-red"
                     data-testid={`home-details-${l.id}`}
                   >

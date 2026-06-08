@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route, useParams } from "react-router-dom";
 import { Toaster } from "sonner";
 import "@/App.css";
 
@@ -12,6 +12,11 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Feedback from "@/pages/Feedback";
 
+const LocationRouteRedirect = () => {
+  const { id } = useParams();
+  return <Navigate to={`/${id}`} replace />;
+};
+
 function App() {
   return (
     <div className="App">
@@ -21,7 +26,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/locations" element={<Locations />} />
-            <Route path="/locations/:id" element={<LocationDetail />} />
+            <Route path="/locations/:id" element={<LocationRouteRedirect />} />
             <Route path="/:id" element={<LocationDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

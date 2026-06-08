@@ -1,38 +1,38 @@
 {
   "redirects": [
     {
-      "source": "/dickinson",
-      "destination": "/locations/dickinson",
+      "source": "/locations/dickinson",
+      "destination": "/dickinson",
       "permanent": true
     },
     {
-      "source": "/la-porte",
-      "destination": "/locations/la-porte",
+      "source": "/locations/la-porte",
+      "destination": "/la-porte",
       "permanent": true
     },
     {
-      "source": "/pasadena",
-      "destination": "/locations/pasadena",
+      "source": "/locations/pasadena",
+      "destination": "/pasadena",
       "permanent": true
     },
     {
-      "source": "/santa-fe",
-      "destination": "/locations/santa-fe",
+      "source": "/locations/santa-fe",
+      "destination": "/santa-fe",
       "permanent": true
     },
     {
-      "source": "/seabrook",
-      "destination": "/locations/seabrook",
+      "source": "/locations/seabrook",
+      "destination": "/seabrook",
       "permanent": true
     },
     {
-      "source": "/league-city",
-      "destination": "/locations/league-city",
+      "source": "/locations/league-city",
+      "destination": "/league-city",
       "permanent": true
     },
     {
-      "source": "/ce-king",
-      "destination": "/locations/ce-king",
+      "source": "/locations/ce-king",
+      "destination": "/ce-king",
       "permanent": true
     }
   ],

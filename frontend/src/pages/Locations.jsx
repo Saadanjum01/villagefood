@@ -84,7 +84,7 @@ const Locations = () => {
                   Get Directions <Navigation size={16} />
                 </a>
                 <Link
-                  to={`/locations/${l.id}`}
+                  to={`/${l.id}`}
                   className="font-ui mt-1 inline-flex items-center justify-center gap-1 self-center text-sm text-navy hover:text-red"
                   data-testid={`location-details-${l.id}`}
                 >
