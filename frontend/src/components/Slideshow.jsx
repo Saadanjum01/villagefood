@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    src: "/images/slide-pepperoni.jpeg",
+    src: "/images/client-pepperoni-pizza-2026.jpeg",
     eyebrow: "Homemade",
     title: "Pepperoni Classic",
-    body: "Vine-ripe sauce, mountains of mozzarella, and crisped-edge pepperoni — the way a pizza ought to be.",
+    body: "Dough made fresh daily with our signature pizza sauce & special blend of mozzarella, provolone & cheddar cheese.",
   },
   {
     src: "/images/slide-meatballs.png",
@@ -17,9 +17,9 @@ const slides = [
   },
   {
     src: "/images/slide-lasagna.png",
-    eyebrow: "Catering Ready",
+    eyebrow: "Family Style",
     title: "Lasagna & Garlic Bread",
-    body: "Layered, baked, and bubbling — feed the table with a Village classic.",
+    body: "Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese.",
   },
 ];
 

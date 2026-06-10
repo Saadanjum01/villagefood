@@ -14,7 +14,7 @@ const PIZZA_IMG =
 const SEAFOOD_IMG =
   "/images/home-seafood.jpg";
 const STORY_IMG =
-  "/images/home-story.jpg";
+  "/images/client-seafood-plate-2026.jpeg";
 
 const Home = () => {
   const locationCount = locations.length;
@@ -93,7 +93,7 @@ const Home = () => {
                 data-testid="home-hero-title"
               >
                 <span className="block text-gold">HOMEMADE PIZZA.</span>
-                <span className="block">GULF-FRESH SEAFOOD.</span>
+                <span className="block">SEAFOOD &amp; CHICKEN.</span>
               </h1>
             </motion.div>
 
@@ -140,8 +140,8 @@ const Home = () => {
               className="rounded-md bg-cream/10 p-4 backdrop-blur-md"
               style={{ border: "1px solid rgba(245,197,24,0.35)" }}
             >
-              <div className="font-ui text-xs text-gold">Open Daily</div>
-              <div className="font-display text-2xl text-cream">10:30A — 10P</div>
+              <div className="font-ui text-xs text-gold">Hours</div>
+              <div className="font-display text-2xl text-cream">Call Location</div>
             </div>
             <div
               className="rounded-md bg-cream/10 p-4 backdrop-blur-md"
@@ -165,11 +165,11 @@ const Home = () => {
             {[...Array(2)].map((_, k) => (
               <div key={k} className="flex shrink-0 items-center gap-10 pr-10">
                 <span>● HOMEMADE PIZZA</span>
-                <span>● GULF-FRESH SEAFOOD</span>
+                <span>● SEAFOOD &amp; CHICKEN</span>
                 <span>● FAMILY-OWNED SINCE 1995</span>
                 <span>● 6 TEXAS LOCATIONS</span>
                 <span>● ORDER ONLINE</span>
-                <span>● CATERING AVAILABLE</span>
+                <span>● SEAFOOD &amp; CHICKEN</span>
               </div>
             ))}
           </div>
@@ -221,9 +221,8 @@ const Home = () => {
               <span className="text-red">GOOD TIMES.</span>
             </h2>
             <p className="mt-6 font-body text-lg text-dark/80">
-              Six neighborhood kitchens across the Texas Gulf Coast — one
-              family recipe book. We slice the cheese, hand-stretch the dough,
-              and source seafood from the coast we call home.
+              Six Texas locations serving pizza, pasta, salads, subs, seafood
+              &amp; chicken, sides, combos, drinks, and desserts.
             </p>
             <p className="mt-4 font-body text-lg text-dark/80">
               Whether it's a busy Tuesday or a Friday-night feast, you're
@@ -282,8 +281,9 @@ const Home = () => {
             <Utensils className="text-gold" size={36} />
             <h3 className="font-display mt-4 text-6xl text-gold">PIZZA</h3>
             <p className="font-body mt-3 max-w-md text-cream/95 text-lg">
-              Homemade dough, vine-ripe sauce, and mountains of mozzarella.
-              Classic, specialty, and build-your-own — small or large.
+              Dough made fresh daily. All pizzas are topped with our signature
+              pizza sauce &amp; special blend of mozzarella, provolone &amp;
+              cheddar cheese.
             </p>
             <Link
               to="/menu#pizza"
@@ -322,8 +322,8 @@ const Home = () => {
             <Star className="text-gold" size={36} />
             <h3 className="font-display mt-4 text-6xl text-gold">SEAFOOD</h3>
             <p className="font-body mt-3 max-w-md text-cream/95 text-lg">
-              Gulf shrimp, fresh-fried catfish, oysters and more — golden,
-              crispy, and served with the sides that make a Texas plate complete.
+              Side orders served a la carte. Dinners served with fries &amp;
+              hushpuppies.
             </p>
             <Link
               to="/menu#seafood"

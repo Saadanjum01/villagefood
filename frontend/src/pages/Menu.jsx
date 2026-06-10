@@ -99,12 +99,19 @@ const Menu = () => {
               transition={{ duration: 0.5 }}
               className="mb-8 flex items-end justify-between gap-4 border-b-4 border-red pb-4"
             >
-              <h2
-                className="font-display text-navy"
-                style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)", lineHeight: 1 }}
-              >
-                {cat.label.toUpperCase()}
-              </h2>
+              <div>
+                <h2
+                  className="font-display text-navy"
+                  style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)", lineHeight: 1 }}
+                >
+                  {cat.label.toUpperCase()}
+                </h2>
+                {cat.note ? (
+                  <p className="font-body mt-3 max-w-2xl text-sm text-dark/75">
+                    {cat.note}
+                  </p>
+                ) : null}
+              </div>
               {cat.id === "pizza" && (
                 <div className="font-ui hidden text-sm text-dark/60 sm:flex sm:items-center sm:gap-6">
                   <span>SMALL</span>

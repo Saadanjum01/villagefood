@@ -59,7 +59,7 @@ const Contact = () => {
               GET IN TOUCH
             </h1>
             <p className="font-body mx-auto mt-5 max-w-xl text-cream/85">
-              Catering, questions, compliments — we'd love to hear from you.
+              Send us a message.
             </p>
           </motion.div>
         </div>
