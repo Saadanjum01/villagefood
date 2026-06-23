@@ -113,7 +113,7 @@ export const menu = {
     {
       name: "Family Spaghetti with Meat Sauce",
       description:
-        "Served in a 12 x 10 inch pan. Additional toppings: meatballs, Italian sausage or fresh mushrooms. Add 3.85 each.",
+        "Served in a 12 x 8 inch pan. Additional toppings: meatballs, Italian sausage or fresh mushrooms. Add 3.85 each.",
       price: "$22.85",
     },
     {
@@ -125,7 +125,7 @@ export const menu = {
     {
       name: "Family Size Homemade Lasagna",
       description:
-        "Served in a 12 x 10 inch pan. Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
+        "Served in a 12 x 8 inch pan. Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
       price: "$28.90",
     },
   ],
