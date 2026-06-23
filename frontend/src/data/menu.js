@@ -1,8 +1,15 @@
-// Auto-generated from extracted village_data.json
 export const menuCategories = [
   { id: "pizza", label: "Pizza" },
-  { id: "pasta", label: "Pasta" },
-  { id: "salads", label: "Salads" },
+  {
+    id: "pasta",
+    label: "Pasta",
+    note: "Homemade recipes. Baked with a trio of cheese. Served with Garlic Bread.",
+  },
+  {
+    id: "salads",
+    label: "Salads",
+    note: "Served with pita bread and your choice of House or Ranch dressing.",
+  },
   {
     id: "coldSubs",
     label: "Cold Subs",
@@ -11,12 +18,25 @@ export const menuCategories = [
   {
     id: "hotSubs",
     label: "Hot Subs",
-    note: "Small: 8 inch. Large: 12 inch. All subs served on our savory French bread rolls.",
+    note: "Small: 8 inch. Large: 12 inch. All subs are served on our savory French bread.",
   },
-  { id: "chicken", label: "Chicken" },
-  { id: "seafood", label: "Seafood" },
+  { id: "chicken", label: "Chicken Dinners" },
+  {
+    id: "seafood",
+    label: "Seafood Dinners",
+    note: "All dinners served with fries and hushpuppies.",
+  },
   { id: "sides", label: "Sides" },
-  { id: "combos", label: "Combos" },
+  {
+    id: "combos",
+    label: "Combos",
+    note: "Dine-in & Pickup Only",
+  },
+  {
+    id: "partyHelper",
+    label: "Party Helper",
+    note: "Serves Approximately 10 People",
+  },
   { id: "drinks", label: "Drinks" },
   { id: "desserts", label: "Desserts" },
 ];
@@ -24,205 +44,207 @@ export const menuCategories = [
 export const menu = {
   pizza: [
     {
-      name: "(Each additional topping",
-      description: "Choose from: Pepperoni, beef, Italian sausage, Canadian bacon, mushrooms, onions, bell peppers, tomatoes, fresh garlic, pineapple, jalapeño, anchovies",
+      name: "Any One Topping",
+      description: "",
+      sm: "$9.20",
+      lg: "$14.35",
+    },
+    {
+      name: "Additional Toppings",
+      description:
+        "Choose from: Pepperoni, beef, Italian sausage, Canadian bacon, mushrooms, onions, bell peppers, tomatoes, fresh garlic, pineapple, jalapeño, anchovies",
       sm: "$1.65",
-      lg: "",
+      lg: "$2.45",
     },
     {
-      name: "(Each additional topping",
-      description: "",
-      sm: "$2.45",
-      lg: "",
+      name: "Specialty Toppings",
+      description: "Extra cheese or real bacon",
+      sm: "$3.30",
+      lg: "$4.90",
     },
     {
-      name: "Small Hawaiian Pizza",
-      description: "pineapples & Canadian bacon",
-      sm: "$10.85",
-      lg: "",
+      name: "Hawaiian",
+      description: "Pineapple & Canadian bacon",
+      sm: "$10.80",
+      lg: "$16.80",
     },
     {
-      name: "Large Hawaiian Pizza",
-      description: "pineapples & Canadian bacon",
-      sm: "$16.80",
-      lg: "",
-    },
-    {
-      name: "Small Breakfast Bacon",
-      description: "",
+      name: "Vegetarian Combo (6-Toppings)",
+      description:
+        "Fresh mushrooms, diced tomatoes, fresh bell peppers, onions, fresh garlic & black olives",
       sm: "$12.95",
-      lg: "",
+      lg: "$17.85",
     },
     {
-      name: "Large Breakfast Bacon",
-      description: "",
-      sm: "$18.85",
-      lg: "",
-    },
-    {
-      name: "Small Veggie Combo Pizza",
-      description: "mushrooms, onions, bell peppers, black olives, tomatoes, garlic",
+      name: "Meat Combo",
+      description: "Pepperoni, beef, Italian sausage & Canadian bacon",
       sm: "$12.95",
-      lg: "",
+      lg: "$18.75",
     },
     {
-      name: "Large Veggie Combo Pizza",
-      description: "mushrooms, onions, bell peppers, black olives, tomatoes, garlic",
-      sm: "$17.85",
-      lg: "",
-    },
-    {
-      name: "Small Meat Combo Pizza",
-      description: "pepperoni, beef, Canadian bacon, Italian sausage",
-      sm: "$12.95",
-      lg: "",
-    },
-    {
-      name: "Large Meat Combo Pizza",
-      description: "pepperoni, beef, Canadian bacon, Italian sausage",
-      sm: "$18.75",
-      lg: "",
-    },
-    {
-      name: "Small Grilled Chicken Pizza",
-      description: "grilled chicken, onions, mushrooms, bell peppers",
-      sm: "$12.95",
-      lg: "",
-    },
-    {
-      name: "Large Grilled Chicken Pizza",
-      description: "grilled chicken, onions, mushrooms, bell peppers",
-      sm: "$18.85",
-      lg: "",
-    },
-    {
-      name: "Small Philly Steak Pizza",
-      description: "Philly steak, onions, mushrooms, bell peppers",
-      sm: "$13.50",
-      lg: "",
-    },
-    {
-      name: "Large Philly Steak Pizza",
-      description: "Philly steak, onions, mushrooms, bell peppers",
-      sm: "$19.95",
-      lg: "",
-    },
-    {
-      name: "Small Village 10-Topping Special Pizza",
-      description: "Pepperoni, beef, Canadian bacon, Italian sausage, onions, mushrooms, bell peppers, black olives, tomatoes, garlic",
+      name: "Village 10-Topping Special",
+      description:
+        "Pepperoni, beef, Italian sausage, Canadian bacon, fresh mushrooms, onions, fresh bell peppers, black olives, diced tomatoes & fresh garlic",
       sm: "$13.85",
-      lg: "",
+      lg: "$20.85",
     },
     {
-      name: "Large Village 10-Topping Special Pizza",
-      description: "pepperoni, beef, Canadian bacon, Italian sausage, onions, mushrooms, bell peppers, black olives, tomatoes, fresh garlic",
-      sm: "$20.85",
-      lg: "",
+      name: "Grilled Chicken",
+      description: "Freshly grilled chicken with bell peppers, mushrooms & onions",
+      sm: "$12.95",
+      lg: "$18.85",
+    },
+    {
+      name: "Philly Steak",
+      description:
+        "Our famous philly steak on a pizza with bell peppers, mushrooms & onions",
+      sm: "$13.50",
+      lg: "$19.95",
     },
   ],
+
   pasta: [
     {
-      name: "Additional toppings: meatballs, Italian sausage, or mushrooms",
-      description: "",
-      price: "$1.95",
+      name: "Spaghetti with Meat Sauce",
+      description:
+        "Homemade recipes. Baked with a trio of cheese. Served with Garlic Bread. Additional toppings: meatballs, Italian sausage or fresh mushrooms. Add 1.95 each.",
+      price: "$10.85",
+    },
+    {
+      name: "Family Spaghetti with Meat Sauce",
+      description:
+        "Served in a 12 x 10 inch pan. Additional toppings: meatballs, Italian sausage or fresh mushrooms. Add 3.85 each.",
+      price: "$22.85",
     },
     {
       name: "Homemade Lasagna",
-      description: "Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
+      description:
+        "Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
       price: "$14.85",
     },
     {
-      name: "Additional toppings: meatballs, Italian sausage, or mushrooms",
-      description: "Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
-      price: "$3.65",
-    },
-    {
       name: "Family Size Homemade Lasagna",
-      description: "(Serves a family of 4)",
+      description:
+        "Served in a 12 x 10 inch pan. Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
       price: "$28.90",
     },
   ],
+
   salads: [
     {
       name: "Garden Salad",
-      description: "Choice of house or ranch dressing",
+      description:
+        "A fresh mix of romaine, iceberg lettuce, red cabbage, tomatoes, onions, cucumbers & black olives.",
       price: "$6.95",
     },
     {
       name: "Greek Salad",
-      description: "Topped with feta cheese. Served with our house Italian dressing.",
+      description: "Topped with feta cheese.",
       price: "$8.95",
     },
     {
-      name: "(Add feta cheese",
-      description: "",
-      price: "$2.65",
+      name: "Grilled Chicken",
+      description: "Grilled on order. (Add Feta Cheese for only 2.65)",
+      price: "$9.85",
     },
     {
       name: "Chef Salad",
-      description: "deli meats & provolone cheese. Choice of house or ranch dressing.",
+      description: "Assorted cold meats & provolone cheese.",
       price: "$10.85",
     },
   ],
+
   coldSubs: [
     {
-      name: "Ham & Cheese Sub",
-      description: "ham, provolone, mayo, lettuce, tomatoes, onions, pickles",
+      name: "Ham & Provolone Cheese",
+      description: "mayo, lettuce, tomato, onion and pickle",
       price: "Small: $7.35 / Large: $8.95",
     },
     {
-      name: "Turkey & Cheese Sub",
-      description: "Smoked turkey, provolone, mayo, lettuce, tomatoes, onions, pickles",
+      name: "Smoked Turkey & Provolone",
+      description: "mayo, lettuce, tomato, onion and pickle",
       price: "Small: $7.35 / Large: $8.95",
     },
     {
-      name: "Club Sub",
-      description: "Ham, turkey, bacon, provolone, mayo, lettuce, tomatoes, onions, pickles",
+      name: "The Club",
+      description:
+        "ham, smoked turkey, bacon, provolone cheese (mayo, lettuce, tomato, onion, pickle)",
       price: "Small: $8.45 / Large: $10.35",
     },
-    {
-      name: "Blt Sub",
-      description: "Bacon, mayo, lettuce, tomatoes",
-      price: "Small: $8.35 / Large: $10.35",
-    },
   ],
+
   hotSubs: [
     {
-      name: "Chicken Parmesan Sub",
-      description: "Fried chicken fillets covered with sauce & cheese. Toasted.",
-      price: "Small: $9.40 / Large: $11.50",
-    },
-    {
-      name: "Philly House Steak Sub",
-      description: "Philly steak, cheese, sautéed onions & mushrooms, mayo, lettuce, tomatoes",
-      price: "Small: $9.85 / Large: $12.50",
-    },
-    {
-      name: "Cheeseburger Sub",
-      description: "Mayo, lettuce, tomatoes, onions, pickles",
-      price: "Small: $9.40 / Large: $11.35",
-    },
-    {
-      name: "Toasted Meatball & Cheese Sub",
-      description: "",
+      name: "Toasted Meatball & Cheese",
+      description: "Melted provolone cheese & our homemade sauce",
       price: "Small: $7.95 / Large: $9.40",
     },
     {
-      name: "Veggie & Cheese Sub",
-      description: "toasted w/ provolone cheese, grilled onions, bell peppers, mushrooms, black olives, fresh garlic, lettuce, tomatoes, pickles and house dressing",
+      name: "B.L.T.",
+      description: "Crisp bacon, lettuce, tomato & mayo",
       price: "Small: $8.35 / Large: $10.35",
     },
     {
-      name: "Fried Chicken Sub",
-      description: "Fried chicken fillets, mayo, lettuce, tomatoes",
+      name: "Fried Chicken Fillet",
+      description: "Mayo, lettuce & tomato",
       price: "Small: $8.35 / Large: $10.35",
     },
     {
-      name: "Grilled Chicken Sub",
-      description: "grilled chicken, sautéed onions, mayo, lettuce, tomatoes",
+      name: "Grilled Chicken",
+      description: "Sautéed onions & cheese (mayo, lettuce, tomato)",
       price: "Small: $8.35 / Large: $10.35",
+    },
+    {
+      name: "Toasted Chicken Parmesan",
+      description:
+        "Fried chicken fillets topped with our homemade sauce and melted provolone cheese.",
+      price: "Small: $9.40 / Large: $11.50",
+    },
+    {
+      name: "Philly House Steak & Cheese",
+      description:
+        "Top quality Philadelphia Steak, melted Swiss American cheese, sautéed onions & mushrooms (mayo, lettuce, tomatoes)",
+      price: "Small: $10.85 / Large: $12.50",
+    },
+    {
+      name: "Cheeseburger",
+      description: "Swiss American cheese, mayo, lettuce, tomato, onion, pickle",
+      price: "Small: $9.40 / Large: $11.35",
+    },
+    {
+      name: "Shrimp Po' Boy",
+      description:
+        "Fried large, butterflied shrimp (homemade tartar sauce, lettuce, tomatoes)",
+      price: "Small: $10.85 / Large: $12.50",
+    },
+    {
+      name: "Fish Po' Boy",
+      description: "Fried Tilapia fillet (homemade tartar sauce, lettuce, tomatoes)",
+      price: "Small: $8.35 / Large: $10.65",
+    },
+    {
+      name: "Oyster Po' Boy",
+      description: "",
+      price: "MKT",
+    },
+    {
+      name: "Popcorn Shrimp Po' Boy",
+      description: "Fried Popcorn Shrimp, homemade tartar sauce, lettuce, tomato",
+      price: "Small: $10.85 / Large: $12.50",
+    },
+    {
+      name: "Clam Po' Boy",
+      description: "Fried New England Clams, homemade tartar sauce, lettuce, tomato",
+      price: "Small: $12.95 / Large: $15.85",
+    },
+    {
+      name: "Create Your Own Seafood Po' Boy",
+      description:
+        "Pick any two of the following items: fish, shrimp, popcorn shrimp, or clams. (homemade tartar sauce, lettuce, tomatoes)",
+      price: "Small: $11.50 / Large: $14.85",
     },
   ],
+
   chicken: [
     {
       name: "Chicken Nugget Dinner",
@@ -230,79 +252,74 @@ export const menu = {
       price: "",
     },
     {
-      name: "Chicken Nugget Dinner",
-      description: "Small (3 pc): $9.45 | Large (4 pc): $11.45 | Family (12 pc): $29.85",
+      name: "Chicken Fillet Dinner",
+      description:
+        "Served with fries, hushpuppies, pita bread & cream gravy. Small (3 pc): $9.45 | Large (4 pc): $11.45 | Family (12 pc): $29.85",
       price: "",
-    },
-    {
-      name: "Fried Wings",
-      description: "7 pc",
-      price: "$12.85",
     },
   ],
+
   seafood: [
     {
-      name: "Shrimp Poboy",
-      description: "Fried butterflied shrimp, tartar sauce, lettuce, tomatoes",
-      price: "Small: $10.85 / Large: $12.50",
-    },
-    {
-      name: "Fish Poboy",
-      description: "fried tilapia fillets, tartar sauce, lettuce, tomatoes",
-      price: "Small: $8.35 / Large: $10.65",
-    },
-    {
-      name: "Popcorn Shrimp Poboy",
-      description: "fried gulf popcorn shrimp, tartar sauce, lettuce, tomatoes",
-      price: "Small: $11.50 / Large: $14.85",
-    },
-    {
-      name: "Seafood Poboy",
-      description: "Pick any 2 items: butterflied shrimp, popcorn shrimp, tilapia fish fillets. Dressed with tartar sauce, lettuce, tomatoes.",
-      price: "Small: $11.50 / Large: $14.85",
-    },
-    {
-      name: "Clam Strip Poboy",
-      description: "fried New England clam strips, tartar sauce, lettuce, tomatoes",
-      price: "Small: $12.95 / Large: $15.85",
-    },
-    {
-      name: "Popcorn Shrimp",
-      description: "Fried Gulf popcorn shrimp. Ala carte (1 lb.): $15.85 | Small dinner (1/2 lb.): $12.85 | Large dinner (1 lb.): $16.95 | Family dinner (2 lb.): $33.85",
-      price: "",
-    },
-    {
-      name: "Double Catch",
-      description: "Pick any 2: 1/2 Lb. popcorn shrimp, 5 Butterflied shrimp, 1 fish, 2 chicken fillet. (Substitute New England clams for additional $5.90). Served with fries & hushpuppies.",
-      price: "$15.95",
-    },
-    {
-      name: "Clam Strips",
-      description: "Fried New England Clam strips. Ala carte (1 lb.): $19.85 | Small dinner (1/2 lb.): $15.95 | Large dinner (1 lb.): $21.85",
-      price: "",
-    },
-    {
-      name: "Triple Catch",
-      description: "5 butterflied shrimp, 1 fish & 1/2 lb. New England clam strips. Served with fries & hushpuppies",
-      price: "$21.85",
-    },
-    {
       name: "Fish Fillet",
-      description: "fried tilapia fish fillets. Ala carte (2 pc): $9.95 | Small dinner (1 pc): $9.45 | Large dinner (2 pc): $12.95 | Family dinner (6 pc): $31.85",
+      description:
+        "Fried tilapia fish fillets. Ala carte (2 pc): $9.95 | Small dinner (1 pc): $9.45 | Large dinner (2 pc): $12.95 | Family dinner (6 pc): $31.85",
       price: "",
-    },
-    {
-      name: "Seafood Platter",
-      description: "6 butterflied shrimp, 2 fish fillet,1/2lb. popcorn shrimp, and 1/2 lb. New England Clam strips. Served with fries, hushpuppies & French bread",
-      price: "$32.85",
     },
     {
       name: "Butterfly Shrimp",
-      description: "Ala carte (10 pc): $15.85 | Small dinner (5 pc): $11.45 | Large dinner (10 pc): $16.95 | Family dinner (20 pc): $33.85",
+      description:
+        "Large, butterflied shrimp. Ala carte (10 pc): $15.85 | Small dinner (5 pc): $11.45 | Large dinner (10 pc): $16.95 | Family dinner (20 pc): $33.85",
       price: "",
     },
+    {
+      name: "Popcorn Shrimp",
+      description:
+        "Fried Gulf popcorn shrimp. Ala carte (1 lb.): $15.85 | Small dinner (1/2 lb.): $12.85 | Large dinner (1 lb.): $16.95 | Family dinner (2 lb.): $33.85",
+      price: "",
+    },
+    {
+      name: "New England Clam Strips",
+      description:
+        "Fried New England Clam strips. Ala carte (1 lb.): $19.85 | Small dinner (1/2 lb.): $15.95 | Large dinner (1 lb.): $21.85",
+      price: "",
+    },
+    {
+      name: "Fried Oysters",
+      description: "Domestic",
+      price: "MKT",
+    },
+    {
+      name: "Shrimp & Clams",
+      description: "5 pc shrimp & 1/2 lb clams",
+      price: "$21.85",
+    },
+    {
+      name: "Double Choice",
+      description:
+        "Pick any 2 of the following: 5 pc Shrimp, 1 pc fish, 2 pc chicken fillet or popcorn shrimp (homemade tartar sauce and cocktail sauce)",
+      price: "$15.95",
+    },
+    {
+      name: "Triple Catch",
+      description:
+        "5 pc Shrimp, 1 pc fish, clams (homemade tartar sauce and cocktail sauce)",
+      price: "$21.85",
+    },
+    {
+      name: "Seafood Platter for Two",
+      description:
+        "Clam strips, 6 pc shrimp, 2 pc fish, popcorn shrimp (French bread, homemade tartar sauce, and cocktail sauce)",
+      price: "$32.85",
+    },
   ],
+
   sides: [
+    {
+      name: "Fried Wings",
+      description: "7 pcs",
+      price: "$12.85",
+    },
     {
       name: "Seasoned Curly Fries",
       description: "",
@@ -339,48 +356,73 @@ export const menu = {
       price: "$3.95",
     },
   ],
+
   combos: [
     {
-      name: "Dine-in & Pickup Only",
-      description: "",
-      price: "",
-    },
-    {
-      name: "#1 Ham & Cheese Combo",
-      description: "6″ ham & cheese sub, chips & drink",
+      title: "#1: 6\" Ham & Provolone Cheese Sub, Chips & Drink",
       price: "$8.35",
+      description: "",
     },
     {
-      name: "#5 Shrimp Po-Boy Combo",
-      description: "6″ shrimp po-boy, fries & drink",
-      price: "$9.25",
-    },
-    {
-      name: "#2 Meatball Sub Combo",
-      description: "6″ toasted meatball & cheese sub, chips & drink",
+      title: "#2: 6\" Toasted Meatball Sub, Chips & Drink",
       price: "$8.65",
+      description: "",
     },
     {
-      name: "#6 Pepperoni Pizza Combo",
-      description: "10″ pepperoni pizza & drink",
+      title: "#3: 6\" Fried Chicken Fillet Sub, Fries & Drink",
+      price: "$8.85",
+      description: "",
+    },
+    {
+      title: "#4: 6\" Cheeseburger Sub, Fries & Drink",
+      price: "$8.85",
+      description: "",
+    },
+    {
+      title: "#5: 6\" Shrimp Po' Boy, Fries & Drink",
+      price: "$9.25",
+      description: "",
+    },
+    {
+      title: "#6: 10\" Pepperoni Pizza & Drink",
       price: "$10.45",
+      description: "",
     },
     {
-      name: "#3 Fried Chicken Sub Combo",
-      description: "6″ fried chicken sub, fries & drink",
+      title: "#7: 6\" Fish Po' Boy, Fries & Drink",
       price: "$8.85",
-    },
-    {
-      name: "#7 Fish Poboy Combo",
-      description: "6″ fish po-boy, fries & drink",
-      price: "$8.85",
-    },
-    {
-      name: "#4 Cheeseburger Sub Combo",
-      description: "6″ cheeseburger sub, fries & drink",
-      price: "$8.85",
+      description: "",
     },
   ],
+
+  partyHelper: [
+    {
+      name: "Party Subs",
+      description: "Twenty, 3 inch Subs: an assortment of cold subs.",
+      price: "$44.75",
+    },
+    {
+      name: "Greek Salad Tray",
+      description: "with Pita Bread.",
+      price: "$42.75",
+    },
+    {
+      name: "Spaghetti & Meatballs Tray",
+      description: "with Garlic Bread.",
+      price: "$64.75",
+    },
+    {
+      name: "Homemade Lasagna Tray",
+      description: "with Garlic Bread.",
+      price: "$89.45",
+    },
+    {
+      name: "Buffalo Wings",
+      description: "50 Pcs. (count may vary due to size of wings).",
+      price: "$79.65",
+    },
+  ],
+
   drinks: [
     {
       name: "Fountain Drink Or Freshly Brewed Iced Tea",
@@ -393,6 +435,7 @@ export const menu = {
       price: "$3.65",
     },
   ],
+
   desserts: [
     {
       name: "New York Style Cheesecake",

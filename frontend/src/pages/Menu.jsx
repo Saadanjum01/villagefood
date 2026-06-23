@@ -97,52 +97,68 @@ const Menu = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="mb-8 flex items-end justify-between gap-4 border-b-4 border-red pb-4"
+              className="mb-8 border-b-4 border-red pb-4"
             >
-              <div>
-                <h2
-                  className="font-display text-navy"
-                  style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)", lineHeight: 1 }}
+              <h2
+                className="font-display text-navy"
+                style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)", lineHeight: 1 }}
+              >
+                {cat.label.toUpperCase()}
+              </h2>
+              {cat.note ? (
+                <p
+                  className={`font-body mt-3 max-w-2xl text-sm ${
+                    cat.id === "hotSubs" ? "font-bold text-dark" : "text-dark/75"
+                  }`}
                 >
-                  {cat.label.toUpperCase()}
-                </h2>
-                {cat.note ? (
-                  <p className="font-body mt-3 max-w-2xl text-sm text-dark/75">
-                    {cat.note}
-                  </p>
-                ) : null}
-              </div>
-              {cat.id === "pizza" && (
-                <div className="font-ui hidden text-sm text-dark/60 sm:flex sm:items-center sm:gap-6">
-                  <span>SMALL</span>
-                  <span>LARGE</span>
-                </div>
-              )}
+                  {cat.note}
+                </p>
+              ) : null}
             </motion.div>
 
             {cat.id === "pizza" ? (
-              <div className="grid gap-x-12 gap-y-2 md:grid-cols-2">
-                {menu.pizza.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={false}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.01 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-start justify-between gap-4 border-b border-dark/10 py-4"
-                    data-testid={`menu-pizza-${i}`}
-                  >
-                    <div className="flex-1">
-                      <h3 className="font-display text-2xl text-navy">{item.name}</h3>
-                      <p className="font-body text-sm text-dark/75">{item.description}</p>
-                    </div>
-                    <div className="font-ui flex shrink-0 gap-5 text-right text-red">
-                      <span className="w-14">{item.sm}</span>
-                      <span className="w-14">{item.lg}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              <>
+                <div className="mb-1 hidden gap-x-12 md:grid md:grid-cols-2">
+                  <div className="flex justify-end gap-5">
+                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
+                      10-inch Small
+                    </span>
+                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
+                      15-inch Large
+                    </span>
+                  </div>
+                  <div className="flex justify-end gap-5">
+                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
+                      10-inch Small
+                    </span>
+                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
+                      15-inch Large
+                    </span>
+                  </div>
+                </div>
+                <div className="grid gap-x-12 gap-y-2 md:grid-cols-2">
+                  {menu.pizza.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={false}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.01 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex items-start justify-between gap-4 border-b border-dark/10 py-4"
+                      data-testid={`menu-pizza-${i}`}
+                    >
+                      <div className="flex-1">
+                        <h3 className="font-display text-2xl text-navy">{item.name}</h3>
+                        <p className="font-body text-sm text-dark/75">{item.description}</p>
+                      </div>
+                      <div className="font-ui flex shrink-0 gap-5 text-right text-red">
+                        <span className="w-14">{item.sm}</span>
+                        <span className="w-14">{item.lg}</span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </>
             ) : (
               <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {menu[cat.id].map((item, i) => (
@@ -157,10 +173,12 @@ const Menu = () => {
                     data-testid={`menu-item-${cat.id}-${i}`}
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className="font-display text-xl text-navy">{item.name}</h3>
+                      <h3 className="font-display text-xl text-navy">{item.title ?? item.name}</h3>
                       <span className="font-ui shrink-0 text-red">{item.price}</span>
                     </div>
-                    <p className="font-body mt-2 text-sm text-dark/75">{item.description}</p>
+                    {item.description ? (
+                      <p className="font-body mt-2 text-sm text-dark/75">{item.description}</p>
+                    ) : null}
                   </motion.div>
                 ))}
               </div>

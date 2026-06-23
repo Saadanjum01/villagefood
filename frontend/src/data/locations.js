@@ -37,7 +37,7 @@ export const locations = [
     name: "Seabrook",
     address: "3568 nasa parkway, seabrook, texas 77586",
     phone: "281-326-3200",
-    orderUrl: "https://online.skytab.com/245afc733d29b9a3eb4ab9980e81bbbb",
+    orderUrl: "https://vpseabrook.cloveronline.com/menu/all",
     hours: "Call for hours",
   },
   {
