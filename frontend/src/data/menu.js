@@ -361,37 +361,42 @@ export const menu = {
     {
       title: "#1: 6\" Ham & Provolone Cheese Sub, Chips & Drink",
       price: "$8.35",
-      description: "",
+      description:
+        "Served on savory French bread. Mayonnaise, lettuce, tomato, onion, and pickle.",
     },
     {
       title: "#2: 6\" Toasted Meatball Sub, Chips & Drink",
       price: "$8.65",
-      description: "",
+      description: "Toasted with melted provolone cheese and sauce.",
     },
     {
       title: "#3: 6\" Fried Chicken Fillet Sub, Fries & Drink",
       price: "$8.85",
-      description: "",
+      description:
+        "Comes with mayo,lettuce,tomatoes. Served with fries and drink. 24 oz cup.",
     },
     {
       title: "#4: 6\" Cheeseburger Sub, Fries & Drink",
       price: "$8.85",
-      description: "",
+      description:
+        "Served Swiss American cheese, mayonnaise, lettuce, tomato, onion, and pickle.",
     },
     {
       title: "#5: 6\" Shrimp Po' Boy, Fries & Drink",
       price: "$9.25",
-      description: "",
+      description:
+        "Served with fried, large butterfly shrimp, tartar sauce, lettuce, tomato.",
     },
     {
       title: "#6: 10\" Pepperoni Pizza & Drink",
       price: "$10.45",
-      description: "",
+      description: "Served with drink. 24oz cup.",
     },
     {
       title: "#7: 6\" Fish Po' Boy, Fries & Drink",
       price: "$8.85",
-      description: "",
+      description:
+        "Served with fried tilapia, tartar sauce, lettuce and tomato.",
     },
   ],
 
