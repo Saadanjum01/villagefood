@@ -60,7 +60,18 @@ const Footer = () => {
         className="border-t border-white/10 px-6 py-5 text-center font-ui text-xs text-cream/70"
         data-testid="footer-copyright"
       >
-        © 2026 Village Pizza & Seafood. All rights reserved.
+        <p>© 2026 Village Pizza & Seafood. All rights reserved.</p>
+        <p className="mt-1">
+          Managed by{" "}
+          <a
+            href="https://procloudsource.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold hover:underline"
+          >
+            ProCloudSource
+          </a>
+        </p>
       </div>
     </footer>
   );
