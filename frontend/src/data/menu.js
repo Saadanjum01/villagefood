@@ -8,7 +8,7 @@ export const menuCategories = [
   {
     id: "salads",
     label: "Salads",
-    note: "Served with pita bread and your choice of House or Ranch dressing.",
+    note: "Served in an 8-inch round pan. Served with pita bread and your choice of House or Ranch dressing.",
   },
   {
     id: "coldSubs",
@@ -20,7 +20,11 @@ export const menuCategories = [
     label: "Hot Subs",
     note: "Small: 8 inch. Large: 12 inch. All subs are served on our savory French bread.",
   },
-  { id: "chicken", label: "Chicken Dinners" },
+  {
+    id: "chicken",
+    label: "Chicken Dinners",
+    note: "All dinners served with fries and hushpuppies.",
+  },
   {
     id: "seafood",
     label: "Seafood Dinners",
@@ -107,7 +111,7 @@ export const menu = {
     {
       name: "Spaghetti with Meat Sauce",
       description:
-        "Homemade recipes. Baked with a trio of cheese. Served with Garlic Bread. Additional toppings: meatballs, Italian sausage or fresh mushrooms. Add 1.95 each.",
+        "Served in an 8-inch round pan. Homemade recipes. Baked with a trio of cheese. Served with Garlic Bread. Additional toppings: meatballs, Italian sausage or fresh mushrooms. Add 1.95 each.",
       price: "$10.85",
     },
     {
@@ -119,7 +123,7 @@ export const menu = {
     {
       name: "Homemade Lasagna",
       description:
-        "Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
+        "Served in an 8-inch round pan. Layers of ricotta cheese, ground beef & pasta baked in our delicious meat sauce & topped with cheese",
       price: "$14.85",
     },
     {
