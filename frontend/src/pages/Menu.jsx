@@ -1,13 +1,71 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { menu, menuCategories } from "../data/menu";
+
+const Lightbox = ({ item, onClose }) => {
+  useEffect(() => {
+    const handler = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        style={{ backgroundColor: "rgba(0,0,0,0.82)" }}
+      >
+        <motion.div
+          className="relative max-w-lg w-full bg-white rounded-lg overflow-hidden shadow-2xl"
+          initial={{ scale: 0.88, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.88, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 28 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <img
+            src={item.image}
+            alt={item.title ?? item.name}
+            className="w-full h-full object-contain bg-white"
+            style={{ maxHeight: "420px" }}
+          />
+          <div className="p-5" style={{ borderTop: "3px solid var(--gold)" }}>
+            <h3 className="font-display text-2xl text-navy">{item.title ?? item.name}</h3>
+            {item.description ? (
+              <p className="font-body mt-1 text-sm text-dark/75">{item.description}</p>
+            ) : null}
+            {item.price ? (
+              <p className="font-ui mt-3 font-bold text-red">{item.price}</p>
+            ) : null}
+            {item.sm ? (
+              <p className="font-ui mt-3 text-red">
+                Small: {item.sm} &nbsp;|&nbsp; Large: {item.lg}
+              </p>
+            ) : null}
+          </div>
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 rounded-full bg-black/50 text-white w-8 h-8 flex items-center justify-center text-lg leading-none hover:bg-black/75 transition-colors"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
 
 const Menu = () => {
   const [active, setActive] = useState("pizza");
+  const [lightboxItem, setLightboxItem] = useState(null);
   const sectionRefs = useRef({});
 
   useEffect(() => {
-    // Sync active tab with scroll position
     const handler = () => {
       const offset = 220;
       let current = "pizza";
@@ -32,6 +90,10 @@ const Menu = () => {
 
   return (
     <div data-testid="menu-page" className="bg-cream">
+      {lightboxItem && (
+        <Lightbox item={lightboxItem} onClose={() => setLightboxItem(null)} />
+      )}
+
       {/* Hero */}
       <section className="bg-navy hero-pattern clip-diagonal-tr py-20" data-testid="menu-hero">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
@@ -144,12 +206,24 @@ const Menu = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.01 }}
                       transition={{ duration: 0.2 }}
-                      className="flex items-start justify-between gap-4 border-b border-dark/10 py-4"
+                      className={`flex items-start justify-between gap-4 border-b border-dark/10 py-4 ${item.image ? "cursor-pointer hover:bg-gold/10 rounded px-2 -mx-2 transition-colors" : ""}`}
+                      onClick={() => item.image && setLightboxItem(item)}
                       data-testid={`menu-pizza-${i}`}
                     >
-                      <div className="flex-1">
-                        <h3 className="font-display text-2xl text-navy">{item.name}</h3>
-                        <p className="font-body text-sm text-dark/75">{item.description}</p>
+                      <div className="flex items-center gap-3 flex-1 min-w-0">
+                        {item.image ? (
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-14 h-14 rounded object-contain bg-white shrink-0 shadow-sm"
+                          />
+                        ) : (
+                          <div className="w-14 h-14 shrink-0" />
+                        )}
+                        <div className="min-w-0">
+                          <h3 className="font-display text-2xl text-navy">{item.name}</h3>
+                          <p className="font-body text-sm text-dark/75">{item.description}</p>
+                        </div>
                       </div>
                       <div className="font-ui flex shrink-0 gap-5 text-right text-red">
                         <span className="w-14">{item.sm}</span>
@@ -168,17 +242,29 @@ const Menu = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.01 }}
                     transition={{ duration: 0.2 }}
-                    className="flex flex-col rounded-md bg-white p-5 shadow-sm hover:shadow-md transition-shadow"
+                    className={`flex flex-col rounded-md bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden ${item.image ? "cursor-pointer" : ""}`}
                     style={{ borderTop: "3px solid var(--gold)" }}
+                    onClick={() => item.image && setLightboxItem(item)}
                     data-testid={`menu-item-${cat.id}-${i}`}
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="font-display text-xl text-navy">{item.title ?? item.name}</h3>
-                      <span className="font-ui shrink-0 text-red">{item.price}</span>
+                    {item.image && (
+                      <div className="w-full overflow-hidden" style={{ height: "180px" }}>
+                        <img
+                          src={item.image}
+                          alt={item.title ?? item.name}
+                          className="w-full h-full object-contain bg-white transition-transform duration-300 hover:scale-105"
+                        />
+                      </div>
+                    )}
+                    <div className="flex flex-col flex-1 p-5">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="font-display text-xl text-navy">{item.title ?? item.name}</h3>
+                        <span className="font-ui shrink-0 text-red">{item.price}</span>
+                      </div>
+                      {item.description ? (
+                        <p className="font-body mt-2 text-sm text-dark/75">{item.description}</p>
+                      ) : null}
                     </div>
-                    {item.description ? (
-                      <p className="font-body mt-2 text-sm text-dark/75">{item.description}</p>
-                    ) : null}
                   </motion.div>
                 ))}
               </div>
