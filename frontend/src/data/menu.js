@@ -257,11 +257,6 @@ export const menu = {
       image: "/images/menu/sub-fish-po-boy.jpg",
     },
     {
-      name: "Oyster Po' Boy",
-      description: "",
-      price: "MKT",
-    },
-    {
       name: "Popcorn Shrimp Po' Boy",
       description:
         "Fried Popcorn Shrimp, homemade tartar sauce, lettuce, tomato",
@@ -273,6 +268,7 @@ export const menu = {
       description:
         "Fried New England Clams, homemade tartar sauce, lettuce, tomato",
       price: "Small: $12.95 / Large: $15.85",
+      image: "/images/menu/sub-clam-po-boy.jpg",
     },
     {
       name: "Create Your Own Seafood Po' Boy",
@@ -329,14 +325,10 @@ export const menu = {
       image: "/images/menu/seafood-clam-strips.jpg",
     },
     {
-      name: "Fried Oysters",
-      description: "Domestic",
-      price: "MKT",
-    },
-    {
       name: "Shrimp & Clams",
       description: "5 pc shrimp & 1/2 lb clams",
       price: "$21.85",
+      image: "/images/menu/seafood-shrimp-and-clams.jpg",
     },
     {
       name: "Double Choice",
