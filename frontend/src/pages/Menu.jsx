@@ -178,64 +178,11 @@ const Menu = () => {
               ) : null}
             </motion.div>
 
-            {cat.id === "pizza" ? (
-              <>
-                <div className="mb-1 hidden gap-x-12 md:grid md:grid-cols-2">
-                  <div className="flex justify-end gap-5">
-                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
-                      10-inch Small
-                    </span>
-                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
-                      15-inch Large
-                    </span>
-                  </div>
-                  <div className="flex justify-end gap-5">
-                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
-                      10-inch Small
-                    </span>
-                    <span className="font-ui w-20 text-center text-xs uppercase tracking-wide text-dark/50">
-                      15-inch Large
-                    </span>
-                  </div>
-                </div>
-                <div className="grid gap-x-12 gap-y-2 md:grid-cols-2">
-                  {menu.pizza.map((item, i) => (
-                    <motion.div
-                      key={i}
-                      initial={false}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.01 }}
-                      transition={{ duration: 0.2 }}
-                      className={`flex items-start justify-between gap-4 border-b border-dark/10 py-4 ${item.image ? "cursor-pointer hover:bg-gold/10 rounded px-2 -mx-2 transition-colors" : ""}`}
-                      onClick={() => item.image && setLightboxItem(item)}
-                      data-testid={`menu-pizza-${i}`}
-                    >
-                      <div className="flex items-center gap-3 flex-1 min-w-0">
-                        {item.image ? (
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            className="w-14 h-14 rounded object-contain bg-white shrink-0 shadow-sm"
-                          />
-                        ) : (
-                          <div className="w-14 h-14 shrink-0" />
-                        )}
-                        <div className="min-w-0">
-                          <h3 className="font-display text-2xl text-navy">{item.name}</h3>
-                          <p className="font-body text-sm text-dark/75">{item.description}</p>
-                        </div>
-                      </div>
-                      <div className="font-ui flex shrink-0 gap-5 text-right text-red">
-                        <span className="w-14">{item.sm}</span>
-                        <span className="w-14">{item.lg}</span>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                {menu[cat.id].map((item, i) => (
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {menu[cat.id].map((item, i) => {
+                const displayPrice =
+                  item.price || (item.sm ? `Sm ${item.sm} / Lg ${item.lg}` : "");
+                return (
                   <motion.div
                     key={i}
                     initial={false}
@@ -259,16 +206,16 @@ const Menu = () => {
                     <div className="flex flex-col flex-1 p-5">
                       <div className="flex items-start justify-between gap-3">
                         <h3 className="font-display text-xl text-navy">{item.title ?? item.name}</h3>
-                        <span className="font-ui shrink-0 text-red">{item.price}</span>
+                        <span className="font-ui shrink-0 text-red">{displayPrice}</span>
                       </div>
                       {item.description ? (
                         <p className="font-body mt-2 text-sm text-dark/75">{item.description}</p>
                       ) : null}
                     </div>
                   </motion.div>
-                ))}
-              </div>
-            )}
+                );
+              })}
+            </div>
           </section>
         ))}
       </div>
