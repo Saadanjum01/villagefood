@@ -169,9 +169,8 @@ const Menu = () => {
               </h2>
               {cat.note ? (
                 <p
-                  className={`font-body mt-3 max-w-2xl text-sm ${
-                    cat.id === "hotSubs" ? "font-bold text-dark" : "text-dark/75"
-                  }`}
+                  className={`font-body mt-3 max-w-2xl text-sm ${cat.id === "hotSubs" ? "font-bold text-dark" : "text-dark/75"
+                    }`}
                 >
                   {cat.note}
                 </p>
@@ -200,6 +199,8 @@ const Menu = () => {
                           src={item.image}
                           alt={item.title ?? item.name}
                           className="w-full h-full object-contain bg-white transition-transform duration-300 hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     )}
