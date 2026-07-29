@@ -8,6 +8,8 @@ import Home from "@/pages/Home";
 import Menu from "@/pages/Menu";
 import Locations from "@/pages/Locations";
 import LocationDetail from "@/pages/LocationDetail";
+import Pizza from "@/pages/Pizza";
+import Seafood from "@/pages/Seafood";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Feedback from "@/pages/Feedback";
@@ -25,6 +27,8 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/pizza" element={<Pizza />} />
+            <Route path="/seafood" element={<Seafood />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/:id" element={<LocationRouteRedirect />} />
             <Route path="/:id" element={<LocationDetail />} />

@@ -7,6 +7,8 @@ import Logo from "./Logo";
 const links = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
+  { to: "/pizza", label: "Pizza" },
+  { to: "/seafood", label: "Seafood" },
   { to: "/locations", label: "Locations" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
