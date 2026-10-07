@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { menu, menuCategories } from "../data/menu";
 
@@ -64,6 +65,22 @@ const Menu = () => {
   const [active, setActive] = useState("pizza");
   const [lightboxItem, setLightboxItem] = useState(null);
   const sectionRefs = useRef({});
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const catParam = searchParams.get("category");
+    if (catParam && sectionRefs.current[catParam]) {
+      setTimeout(() => {
+        const el = sectionRefs.current[catParam];
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 170;
+          window.scrollTo({ top: y, behavior: "smooth" });
+          setActive(catParam);
+        }
+      }, 100);
+    }
+  }, [location.search]);
 
   useEffect(() => {
     const handler = () => {

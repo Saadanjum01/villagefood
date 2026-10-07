@@ -18,6 +18,9 @@ const STORY_IMG =
 
 const Home = () => {
   const locationCount = locations.length;
+  const sortedLocations = [...locations].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 
   return (
     <div data-testid="home-page">
@@ -108,8 +111,8 @@ const Home = () => {
                 className="font-body text-lg text-cream/95 lg:text-xl"
                 data-testid="home-hero-tagline"
               >
-                Three decades of pies, platters, and packed dining rooms.
-                One family. One recipe book. {locationCount} hometowns.
+                Serving over three decades.
+                Family owned since 1995. {locationCount} hometowns.
               </p>
             </motion.div>
           </div>
@@ -361,7 +364,7 @@ const Home = () => {
           </motion.div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {locations.map((l, idx) => (
+            {sortedLocations.map((l, idx) => (
               <motion.div
                 key={l.id}
                 initial={{ opacity: 0, y: 20 }}

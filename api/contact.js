@@ -22,8 +22,22 @@ const escape = (s = "") =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
+async function verifyCaptcha(token) {
+  if (!token || !process.env.RECAPTCHA_SECRET_KEY) return false;
+  const r = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ secret: process.env.RECAPTCHA_SECRET_KEY, response: token }),
+  });
+  return (await r.json()).success === true;
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+
+  if (!(await verifyCaptcha((req.body || {}).captcha))) {
+    return res.status(400).json({ error: "CAPTCHA verification failed." });
+  }
 
   const { name, email, location, message } = req.body || {};
 

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { motion } from "framer-motion";
 import { Star, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -14,6 +15,8 @@ const Feedback = () => {
   });
   const [hoverRating, setHoverRating] = useState(0);
   const [submitting, setSubmitting] = useState(false);
+  const [captcha, setCaptcha] = useState(null);
+  const captchaRef = useRef(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -23,6 +26,10 @@ const Feedback = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!captcha) {
+      toast.error("Please complete the CAPTCHA first.");
+      return;
+    }
     if (!form.name || !form.email || !form.location || form.rating === 0 || !form.message) {
       toast.error("Please complete all fields, including a star rating.");
       return;
@@ -32,7 +39,7 @@ const Feedback = () => {
       const res = await fetch("/_/backend/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, captcha }),
       });
       if (!res.ok) throw new Error("Server error");
       setSubmitted(true);
@@ -42,6 +49,8 @@ const Feedback = () => {
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
+      captchaRef.current?.reset();
+      setCaptcha(null);
       setSubmitting(false);
     }
   };
@@ -175,10 +184,18 @@ const Feedback = () => {
             />
           </div>
 
+          <div className="mt-6" data-testid="feedback-captcha">
+            <ReCAPTCHA
+              ref={captchaRef}
+              sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+              onChange={setCaptcha}
+              onExpired={() => setCaptcha(null)}
+            />
+          </div>
           <button
             type="submit"
-            disabled={submitting}
-            className="btn-primary mt-6"
+            disabled={submitting || !captcha}
+            className="btn-primary mt-4 disabled:cursor-not-allowed disabled:opacity-50"
             data-testid="feedback-submit"
           >
             {submitting ? "Submitting..." : "Submit Feedback"} <Send size={16} />
