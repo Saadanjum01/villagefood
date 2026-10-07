@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { motion } from "framer-motion";
 import { Mail, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -12,6 +13,8 @@ const Contact = () => {
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [captcha, setCaptcha] = useState(null);
+  const captchaRef = useRef(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,6 +22,10 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!captcha) {
+      toast.error("Please complete the CAPTCHA first.");
+      return;
+    }
     if (!form.name || !form.email || !form.message) {
       toast.error("Please fill in your name, email, and message.");
       return;
@@ -28,7 +35,7 @@ const Contact = () => {
       const res = await fetch("/_/backend/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, captcha }),
       });
       if (!res.ok) throw new Error("Server error");
       setForm({ name: "", email: "", location: "", message: "" });
@@ -36,6 +43,8 @@ const Contact = () => {
     } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
+      captchaRef.current?.reset();
+      setCaptcha(null);
       setSubmitting(false);
     }
   };
@@ -179,10 +188,18 @@ const Contact = () => {
               />
             </div>
 
+            <div className="mt-6" data-testid="contact-captcha">
+              <ReCAPTCHA
+                ref={captchaRef}
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                onChange={setCaptcha}
+                onExpired={() => setCaptcha(null)}
+              />
+            </div>
             <button
               type="submit"
-              disabled={submitting}
-              className="btn-primary mt-6 w-full sm:w-auto"
+              disabled={submitting || !captcha}
+              className="btn-primary mt-4 w-full sm:w-auto disabled:cursor-not-allowed disabled:opacity-50"
               data-testid="contact-submit"
             >
               {submitting ? "Sending..." : "Send Message"} <Send size={16} />

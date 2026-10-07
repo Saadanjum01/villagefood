@@ -7,6 +7,10 @@ from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr
 from typing import Optional
 import resend
+import asyncio
+import json
+import urllib.parse
+import urllib.request
 
 
 ROOT_DIR = Path(__file__).parent
@@ -24,12 +28,33 @@ class ContactForm(BaseModel):
     email: EmailStr
     location: Optional[str] = None
     message: str
+    captcha: str
 
 class FeedbackForm(BaseModel):
     name: str
     location: str
     rating: int = Field(ge=1, le=5)
     message: str
+    captcha: str
+
+
+async def verify_captcha(token: str):
+    secret = os.environ.get('RECAPTCHA_SECRET_KEY', '')
+    if not secret:
+        raise HTTPException(status_code=500, detail="CAPTCHA not configured.")
+    data = urllib.parse.urlencode({'secret': secret, 'response': token}).encode()
+
+    def call():
+        with urllib.request.urlopen('https://www.google.com/recaptcha/api/siteverify', data, timeout=10) as r:
+            return json.load(r)
+
+    try:
+        ok = (await asyncio.to_thread(call)).get('success')
+    except Exception as e:
+        logger.error("reCAPTCHA verify failed: %s", e)
+        raise HTTPException(status_code=502, detail="CAPTCHA check failed.")
+    if not ok:
+        raise HTTPException(status_code=400, detail="CAPTCHA verification failed.")
 
 
 LOCATION_NAMES = {
@@ -49,6 +74,7 @@ async def root():
 
 @api_router.post("/contact")
 async def send_contact_email(form: ContactForm):
+    await verify_captcha(form.captcha)
     if not resend.api_key:
         raise HTTPException(status_code=500, detail="Email service not configured.")
 
@@ -93,6 +119,7 @@ async def send_contact_email(form: ContactForm):
 
 @api_router.post("/feedback")
 async def send_feedback_email(form: FeedbackForm):
+    await verify_captcha(form.captcha)
     if not resend.api_key:
         raise HTTPException(status_code=500, detail="Email service not configured.")
 
