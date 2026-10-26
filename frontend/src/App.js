@@ -10,6 +10,8 @@ import Locations from "@/pages/Locations";
 import LocationDetail from "@/pages/LocationDetail";
 import Pizza from "@/pages/Pizza";
 import Seafood from "@/pages/Seafood";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Feedback from "@/pages/Feedback";
@@ -29,6 +31,8 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/pizza" element={<Pizza />} />
             <Route path="/seafood" element={<Seafood />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/:id" element={<LocationRouteRedirect />} />
             <Route path="/:id" element={<LocationDetail />} />
