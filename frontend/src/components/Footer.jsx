@@ -26,6 +26,7 @@ const Footer = () => {
             <li><Link to="/menu" className="hover:text-gold" data-testid="footer-link-menu">Menu</Link></li>
             <li><Link to="/pizza" className="hover:text-gold" data-testid="footer-link-pizza">Pizza</Link></li>
             <li><Link to="/seafood" className="hover:text-gold" data-testid="footer-link-seafood">Seafood</Link></li>
+            <li><Link to="/blog" className="hover:text-gold" data-testid="footer-link-blog">Blog</Link></li>
             <li><Link to="/locations" className="hover:text-gold" data-testid="footer-link-locations">Locations</Link></li>
             <li><Link to="/about" className="hover:text-gold" data-testid="footer-link-about">About</Link></li>
             <li><Link to="/contact" className="hover:text-gold" data-testid="footer-link-contact">Contact</Link></li>

@@ -9,6 +9,7 @@ const links = [
   { to: "/menu", label: "Menu" },
   { to: "/pizza", label: "Pizza" },
   { to: "/seafood", label: "Seafood" },
+  { to: "/blog", label: "Blog" },
   { to: "/locations", label: "Locations" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
